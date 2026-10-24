@@ -1,17 +1,31 @@
-<!doctype html><html><head><meta charset="utf-8"><title>Playtest builds</title>
-<style>html,body{margin:0;height:100%;background:#111;color:#ddd;font:14px sans-serif}#bar{position:fixed;top:0;left:0;right:0;z-index:2;padding:6px;background:#0008}canvas{display:block;width:100%;height:100%}</style></head>
-<body><div id="bar"><select id="pick"></select> <span id="st"></span></div><canvas id="canvas"></canvas>
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Playtest builds</title>
+<style>html,body{margin:0;height:100%;background:#111;color:#ddd;font:14px sans-serif;overflow:hidden}
+#bar{position:fixed;top:0;left:0;right:0;z-index:2;padding:6px 8px;background:#000b;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+#bar select{max-width:100%}#info{flex-basis:100%;display:none;line-height:1.4}#bar.open #info{display:block}
+#bar.mini{left:auto;background:#0006}#bar.mini #pick,#bar.mini #st,#bar.mini #info{display:none}
+canvas{display:block;width:100%;height:100%}button{font:inherit}</style></head>
+<body><div id="bar"><select id="pick"></select><span id="st"></span><button id="tog">Builds &amp; notes</button><div id="info"></div></div><canvas id="canvas" tabindex="0"></canvas>
 <script>
 (async()=>{
+ const st=document.getElementById('st'), bar=document.getElementById('bar');
+ document.getElementById('tog').onclick=()=>{if(bar.classList.contains('mini')){bar.classList.remove('mini');bar.classList.add('open');}else{bar.classList.add('mini');bar.classList.remove('open');}};
  const v=await (await fetch('versions.json',{cache:'no-store'})).json();
- const b=v.builds.slice().sort((a,b)=>b.date.localeCompare(a.date)); const want=location.hash.slice(1)||b[0].id;
- const cur=b.find(x=>x.id===want)||b[0]; const pick=document.getElementById('pick');
- for(const x of b){const o=new Option(`${x.date} ${x.game} ${x.id}: ${x.title}`,x.id);o.selected=x===cur;pick.add(o);}
+ const b=v.builds.slice().sort((x,y)=>y.date.localeCompare(x.date)); // stable: keeps file order within a day (newest first)
+ const want=decodeURIComponent(location.hash.slice(1)); const cur=b.find(x=>x.id===want)||b[0];
+ const pick=document.getElementById('pick'); let lastDate=null, grp=null;
+ for(const x of b){ if(x.date!==lastDate){grp=document.createElement('optgroup');grp.label=x.date;pick.appendChild(grp);lastDate=x.date;}
+   const o=new Option(`${x.game} ${x.id}: ${x.title}`,x.id); o.selected=x===cur; grp.appendChild(o); }
  pick.onchange=()=>{location.hash=pick.value;location.reload();};
+ window.onhashchange=()=>location.reload();
+ const esc=s=>String(s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+ document.getElementById('info').innerHTML=`<b>${esc(cur.title)}</b> (${esc(cur.repo)} @ ${esc(cur.sha)})<br>${esc(cur.summary)}`+
+   (cur.controls?`<br><b>Controls:</b> ${esc(cur.controls)}`:'')+(cur.test?`<br><b>What to test:</b> ${esc(cur.test)}`:'');
+ if(!location.hash) bar.classList.add('open');
  const eng=`engine/${cur.engine}/`; const s=document.createElement('script'); s.src=eng+'index.js';
- s.onload=()=>{const st=document.getElementById('st');
+ s.onload=()=>{
   const e=new Engine({executable:eng+'index',mainPack:cur.pck,canvasResizePolicy:2,focusCanvas:true,ensureCrossOriginIsolationHeaders:false,args:[]});
-  e.startGame({onProgress:(c,t)=>st.textContent=t?`loading ${Math.round(100*c/t)}%`:'loading'}).then(()=>st.textContent=cur.id+" - "+cur.summary,err=>st.textContent='error: '+err);};
+  e.startGame({onProgress:(c,t)=>st.textContent=t?`loading ${Math.round(100*c/t)}%`:'loading'})
+   .then(()=>{st.textContent=cur.id;bar.classList.remove('open');bar.classList.add('mini');document.getElementById('canvas').focus();},err=>st.textContent='error: '+err);};
  document.head.appendChild(s);
 })();
 </script></body></html>
