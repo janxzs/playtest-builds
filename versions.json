@@ -1,0 +1,17 @@
+{
+  "builds": [
+    {
+      "id": "main-7323dfd-2026-10-24",
+      "game": "zeigote",
+      "repo": "janxzs/Zeigote-Godot",
+      "pr": null,
+      "sha": "7323dfd",
+      "date": "2026-10-24",
+      "engine": "4.7.2",
+      "pck": "builds/zeigote/main-7323dfd-2026-10-24/zeigote.pck",
+      "title": "Zeigote foundation (M0)",
+      "summary": "Greybox foundation scene: the team Nexus on a ground plane. Single-player only in the browser; no controls yet.",
+      "status": "merged"
+    }
+  ]
+}
