@@ -1,6 +1,21 @@
 {
   "builds": [
     {
+      "id": "main-f82f465-2026-10-24",
+      "game": "zeigote",
+      "repo": "janxzs/Zeigote-Godot",
+      "pr": null,
+      "sha": "f82f465",
+      "date": "2026-10-24",
+      "engine": "4.7.2",
+      "pck": "builds/zeigote/main-f82f465-2026-10-24/zeigote.pck",
+      "title": "Zeigote solo thin slice: playtest fixes",
+      "summary": "Same solo loop as the last build, with fixes: clicking the title now starts the game (without attacking), pause and game-over screens have Resume/Restart buttons, and the Nexus label no longer covers the HUD.",
+      "controls": "Click the title to start. WASD/arrows move, Space or left mouse attacks, E deposits at the Nexus or harvests brown resource nodes, N calls the next wave, P/Esc pauses, R restarts (or use the Resume/Restart buttons).",
+      "test": "Is the loop clear without instructions? Do movement, attack and the camera feel OK in the browser? Wave pacing and whether Tier 2 (100 drops) is reachable. Report stuck spots, stacking enemies, unreachable pickups, HUD overlap and performance.",
+      "status": "merged"
+    },
+    {
       "id": "main-1ba1abf-2026-10-24",
       "game": "zeigote",
       "repo": "janxzs/Zeigote-Godot",
