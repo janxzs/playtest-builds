@@ -18,6 +18,24 @@
       "status": "merged"
     },
     {
+      "id": "pivot-fps-nexus-e618714-2026-10-25",
+      "game": "tower-defense",
+      "repo": "janxzs/Tower-Defense-Clone-Godot",
+      "pr": null,
+      "sha": "e618714",
+      "ticket": null,
+      "branch": "pivot/fps-nexus",
+      "datetime": "2026-10-25T11:28:32-07:00",
+      "date": "2026-10-25",
+      "engine": "4.7.2",
+      "pck": "builds/tower-defense/pivot-fps-nexus-e618714-2026-10-25/tower-defense.pck",
+      "title": "Tower Defense: first-person nexus pivot (branch preview)",
+      "summary": "Branch preview of the GDD v0.2 pivot (branch pivot/fps-nexus, not merged). First person: defend a central nexus against enemies coming from four gates. Build walls and towers into a maze that they reroute through live, and shoot them with a hitscan gun.",
+      "controls": "Click to capture the mouse. Mouse look, WASD move, Shift sprint, Space jump, hold left mouse to shoot. B or Q toggles build mode, 1-4 picks a piece, R rotates, left mouse places, X or right mouse sells. N or Enter starts a wave. V overhead view, F4 flow arrows, F3 stats. Esc or P pauses (Resume recaptures the mouse). R restarts after game over.",
+      "test": "Does the title click capture the mouse, does Esc pause, and does Resume recapture? In build mode, is the ghost green/red with a reason, and does selling refund? Do enemies really walk around your walls (V and F4 help)? Is sealing the nexus refused? Does the gun feel useful next to the towers?",
+      "status": "branch preview"
+    },
+    {
       "id": "main-43fccb0-2026-10-25",
       "game": "gears-clone",
       "repo": "janxzs/GearsClone-Godot",

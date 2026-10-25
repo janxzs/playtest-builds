@@ -10,7 +10,7 @@ a{color:#8ab4ff}.nav{display:inline-block;margin:0 0 12px;text-decoration:none}.
 .game{display:block;cursor:pointer;text-decoration:none;color:inherit}.game:hover{border-color:#556;background:#202024}
 .game h3{font-size:18px}.none{color:#888;font-style:italic}
 .play{margin-top:8px;background:#3b82f6;color:#fff;border:0;border-radius:8px;padding:8px 18px;font:inherit;font-weight:600;cursor:pointer}
-.play:hover{background:#2563eb}.latest{font-size:12px;background:#264;color:#cfe;border-radius:6px;padding:1px 6px;margin-left:6px}
+.play:hover{background:#2563eb}.latest{font-size:12px;background:#264;color:#cfe;border-radius:6px;padding:1px 6px;margin-left:6px}.branch{font-size:12px;background:#542;color:#fdb;border-radius:6px;padding:1px 6px;margin-left:6px}
 #game{display:none;height:100%}#game canvas{display:block;width:100%;height:100%}
 #bar{position:fixed;left:6px;bottom:6px;z-index:2;padding:3px 6px;background:#0008;border-radius:6px;display:flex;gap:6px;align-items:center;font-size:11px;opacity:.45;transition:opacity .15s;pointer-events:auto}
 #bar:hover{opacity:1}
@@ -54,14 +54,14 @@ a{color:#8ab4ff}.nav{display:inline-block;margin:0 0 12px;text-decoration:none}.
   list.innerHTML=`<h1>Playtest builds</h1><p class="sub">Playable web builds of Jan's Godot prototypes. Pick a game to see its builds. Browser builds are solo and offline, unless a game's page has a Server address for online co-op.</p>`+
   games.map(x=>{const gb=builds.filter(b=>b.game===x.slug);
    return `<a class="card game" href="#${esc(x.slug)}" data-slug="${esc(x.slug)}"><h3>${esc(x.name)}</h3><p>${esc(x.description)}</p>`+
-   (gb.length?`<div class="meta">${gb.length} build${gb.length>1?'s':''} · latest ${esc(when(gb[0]))}</div>`:`<div class="meta none">No builds yet</div>`)+`</a>`;}).join('');};
+   (gb.length?`<div class="meta">${gb.length} build${gb.length>1?'s':''} · latest ${esc(when(gb[0]))}${gb[0].branch?' (branch preview)':''}</div>`:`<div class="meta none">No builds yet</div>`)+`</a>`;}).join('');};
  const gamePage=x=>{document.title=`${x.name} – playtest builds`;
   const gb=builds.filter(b=>b.game===x.slug);
   const saved=x.multiplayer?(localStorage.getItem(srvKey(x.slug))||''):'';
   list.innerHTML=`<a class="nav" id="allgames" href="#">← All games</a><h1>${esc(x.name)}</h1><p class="sub">${esc(x.description)}</p>`+
   (x.multiplayer?`<div class="srv"><label class="lbl" for="srvin">Server address</label><br><input id="srvin" placeholder="ws://127.0.0.1:9080 (this PC) or wss://… (remote); empty = solo" value="${esc(saved)}" spellcheck="false" autocomplete="off"><button id="srvlocal" title="Server started on this PC by start-zeigote-server.bat">This PC</button><button id="srvclr">Clear</button>
 <p class="hint" id="srvhint">Paste the wss://….trycloudflare.com address (or the whole friend link) from the host's server window, or just open the link it printed. Saved in this browser. Empty = solo offline.</p></div>`:'')+
-  (gb.length?gb.map((b,i)=>`<div class="card"><h3>${esc(b.title)}${i===0?'<span class="latest">latest</span>':''}</h3>
+  (gb.length?gb.map((b,i)=>`<div class="card"><h3>${esc(b.title)}${b.branch?`<span class="branch">branch preview: ${esc(b.branch)}, not merged</span>`:(i===0?'<span class="latest">latest</span>':'')}</h3>
 <div class="meta">${esc(when(b))} · <code>${esc(b.id)}</code> · ${esc(b.repo)} @ ${esc(b.sha)} · Godot ${esc(b.engine)}</div>
 <p>${esc(b.summary)}</p>${b.controls?`<p><span class="lbl">Controls:</span> ${esc(b.controls)}</p>`:''}${b.test?`<p><span class="lbl">What to test:</span> ${esc(b.test)}</p>`:''}
 <button class="play" data-id="${esc(b.id)}">Play</button></div>`).join(''):`<p class="none">No builds yet.</p>`);
