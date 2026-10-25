@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-e69816b-2026-10-24",
+      "game": "zeigote",
+      "repo": "janxzs/Zeigote-Godot",
+      "pr": null,
+      "sha": "e69816b",
+      "ticket": "ZG-0024",
+      "datetime": "2026-10-24T22:42:55-07:00",
+      "date": "2026-10-24",
+      "engine": "4.7.2",
+      "pck": "builds/zeigote/main-e69816b-2026-10-24/zeigote.pck",
+      "title": "Zeigote co-op fixes (ZG-0024)",
+      "summary": "Co-op players now spawn side by side facing the Nexus, and every new group starts with a full Nexus (the server resets the match when the last player leaves, which caused the 0/1000 OVERRUN). Joining retries automatically (15 s per attempt, 4 attempts) and shows RETRYING. The solo DOWNED screen shows only 'No respawn'. At low FPS the camera no longer overshoots and hit flashes always show. To join a server, put ?server=ws://127.0.0.1:9080 before the # in the URL: https://janxzs.github.io/playtest-builds/?server=ws%3A%2F%2F127.0.0.1%3A9080#main-e69816b-2026-10-24 (the server must be this same build).",
+      "controls": "Click to start and lock the mouse. Mouse look, WASD move, Space jump, left mouse attacks, hold right mouse to block, E harvest/deposit, N calls the next wave, Esc/P menu (online it doesn't pause the world), R restart (online: restarts the match for everyone), V top-down debug view. One PC, several players: one browser window each, side by side, not tabs.",
+      "test": "Co-op: do players spawn side by side, does every new group start with a full Nexus, and does a failed join retry by itself (RETRYING)? Solo: does DOWNED show only 'No respawn'? Low FPS: does the camera stay steady and do hit flashes show? Also: shared deposits, tier and waves, and a mismatch message for a different build.",
+      "status": "merged"
+    },
+    {
       "id": "main-3dfde25-2026-10-24",
       "game": "minecraft-clone",
       "repo": "janxzs/Minecraft-Clone-Godot",
