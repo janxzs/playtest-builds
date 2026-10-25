@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-43fccb0-2026-10-25",
+      "game": "gears-clone",
+      "repo": "janxzs/GearsClone-Godot",
+      "pr": null,
+      "sha": "43fccb0",
+      "ticket": "feature/weapons",
+      "datetime": "2026-10-25T11:15:25-07:00",
+      "date": "2026-10-25",
+      "engine": "4.7.2",
+      "pck": "builds/gears-clone/main-43fccb0-2026-10-25/gears-clone.pck",
+      "title": "Gears Clone: four weapons",
+      "summary": "Four weapons now: the rifle, a sword with a visible slash, a slingshot that lobs pebbles, and a bow you hold to draw and release (a full draw takes a dummy down in one arrow). Switch with 1-4 or the mouse wheel. A practice dummy by the start is there for the sword.",
+      "controls": "WASD move, mouse look, click to capture the mouse (doesn't fire). Left mouse fires the rifle, swings the sword, shoots the slingshot, or hold to draw the bow and release to shoot. Right mouse aims, R reloads, 1-4 or the mouse wheel switches weapon, Esc frees the mouse.",
+      "test": "Does each weapon hit a dummy (watch the hits counter)? Sword: turn around, the practice dummy is behind you on the left. Slingshot: does the pebble arc onto the crosshair? Bow: does the draw meter show, and does a full draw take a dummy down in one arrow? Does the wheel switch weapons without grabbing the mouse? Esc frees the mouse and nothing freezes.",
+      "status": "merged"
+    },
+    {
       "id": "main-4aae2df-2026-10-25",
       "game": "zeigote",
       "repo": "janxzs/Zeigote-Godot",
