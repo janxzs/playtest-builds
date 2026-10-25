@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-5fa21d4-2026-10-24",
+      "game": "zeigote",
+      "repo": "janxzs/Zeigote-Godot",
+      "pr": null,
+      "sha": "5fa21d4",
+      "ticket": "ZG-0021",
+      "datetime": "2026-10-24T20:53:56-07:00",
+      "date": "2026-10-24",
+      "engine": "4.7.2",
+      "pck": "builds/zeigote/main-5fa21d4-2026-10-24/zeigote.pck",
+      "title": "Zeigote in first person: jump and shield block (ZG-0021)",
+      "summary": "Zeigote is now first person. Click to start (the click locks the mouse), Space to jump, left click to attack, and hold right click to raise a shield that blocks most damage from the front. Game over now waits about 1 s and only restarts with R or the Restart button.",
+      "controls": "Click to start and lock the mouse. Mouse look, WASD move, Space jump, left mouse attacks, hold right mouse to block (slower, no attacks), E harvest/deposit, N calls the next wave, Esc/P pause, R restart, V top-down debug view.",
+      "test": "Does the start click lock the mouse cleanly, and does Esc free it and pause? Does blocking a Zeigote hit feel readable (shield up, 'Blocked!', blue flash), and is the jump height OK? Does the ~1 s game-over delay stop accidental restarts? Do the Zeigote come for you within ~8 m and do the hits feel fair? Wave pacing, stuck spots, HUD overlap and performance.",
+      "status": "merged"
+    },
+    {
       "id": "main-09ff706-2026-10-24",
       "game": "gears-clone",
       "repo": "janxzs/GearsClone-Godot",
