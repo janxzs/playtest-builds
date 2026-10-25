@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-09ff706-2026-10-24",
+      "game": "gears-clone",
+      "repo": "janxzs/GearsClone-Godot",
+      "pr": null,
+      "sha": "09ff706",
+      "date": "2026-10-24",
+      "engine": "4.7.2",
+      "pck": "builds/gears-clone/main-09ff706-2026-10-24/gears-clone.pck",
+      "title": "Gears Clone M0: web fixes",
+      "summary": "The game no longer grabs the mouse on load (click once to capture it), and in the browser Esc only frees the mouse and never quits, so the freeze is gone. Gameplay is unchanged.",
+      "controls": "Click the game to capture the mouse. WASD move, Shift sprint, hold right mouse to aim, hold left mouse to fire, R reload, C/Ctrl crouch, E snap to cover or leave it, A/D slide along cover. Esc frees the mouse; click the game to recapture.",
+      "test": "Does the shoulder camera and aiming feel responsive? Does snapping to cover with E, sliding along it and popping out to aim feel right? Do hits on the orange dummies register where the crosshair is (known issue: shots can hit your own cover just in front of you, fix coming next)? Any stutter or low frame rate in the browser.",
+      "status": "merged",
+      "ticket": "M0 web fixes",
+      "datetime": "2026-10-24T20:40:37-07:00"
+    },
+    {
       "id": "main-9ecc88f-2026-10-24",
       "game": "minecraft-clone",
       "repo": "janxzs/Minecraft-Clone-Godot",
