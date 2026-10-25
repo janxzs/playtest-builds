@@ -13,7 +13,8 @@
       "summary": "Same solo loop as the last build, with fixes: clicking the title now starts the game (without attacking), pause and game-over screens have Resume/Restart buttons, and the Nexus label no longer covers the HUD.",
       "controls": "Click the title to start. WASD/arrows move, Space or left mouse attacks, E deposits at the Nexus or harvests brown resource nodes, N calls the next wave, P/Esc pauses, R restarts (or use the Resume/Restart buttons).",
       "test": "Is the loop clear without instructions? Do movement, attack and the camera feel OK in the browser? Wave pacing and whether Tier 2 (100 drops) is reachable. Report stuck spots, stacking enemies, unreachable pickups, HUD overlap and performance.",
-      "status": "merged"
+      "status": "merged",
+      "datetime": "2026-10-24T16:44:18-07:00"
     },
     {
       "id": "main-1ba1abf-2026-10-24",
@@ -28,7 +29,8 @@
       "summary": "First playable loop, solo and offline: collect glowing Zeigote drops, deposit them at the teal Nexus to reach Tier 1, then fight off the Zeigote waves that follow and bank what they drop.",
       "controls": "Click the game first. WASD/arrows move, Space or left mouse attacks, E deposits at the Nexus or harvests brown resource nodes, N calls the next wave, P/Esc pauses, R restarts.",
       "test": "Is the loop clear without instructions? Do movement, attack and the camera feel OK in the browser? Wave pacing and whether Tier 2 (100 drops) is reachable. Report stuck spots, stacking enemies, unreachable pickups, HUD overlap and performance.",
-      "status": "merged"
+      "status": "merged",
+      "datetime": "2026-10-24T16:31:50-07:00"
     },
     {
       "id": "main-7323dfd-2026-10-24",
@@ -43,7 +45,8 @@
       "summary": "Greybox foundation scene: the team Nexus on a ground plane. Single-player only in the browser; no controls yet.",
       "status": "merged",
       "controls": "No controls yet (static scene).",
-      "test": "Boots and renders in your browser."
+      "test": "Boots and renders in your browser.",
+      "datetime": "2026-10-24T16:06:06-07:00"
     }
   ]
 }

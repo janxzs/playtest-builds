@@ -6,6 +6,6 @@ Playable web builds of Jan's Godot prototypes. **Builds only, no source.**
 - `engine/<godot-version>/`: the shared Godot web engine (no-threads export, no COOP/COEP needed).
 - `builds/<game>/<build-id>/<game>.pck`: one small game pack per build. Build ids are `pr<N>-<sha7>-<date>` (or `main-<sha7>-<date>` for direct merges). Each entry in `versions.json` carries controls and what-to-test notes, shown on each build card.
 - `games.json`: the games on the home page, in order: `slug`, `name`, one-line `description`, source `repo`, `project` (dir holding `project.godot`) and optional `scene` (main-scene override). Games can come from different repos; a build's `game` field is one of these slugs.
-- `versions.json`: the list of published builds, newest first. Builds are never deleted.
+- `versions.json`: the list of published builds, newest first by `datetime` (the source merge commit's time, ISO 8601 with the America/Los_Angeles offset). Builds are never deleted.
 
 Browser builds are offline/solo: ENet multiplayer doesn't run on the web.

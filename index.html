@@ -25,7 +25,10 @@ a{color:#8ab4ff}.nav{display:inline-block;margin:0 0 12px;text-decoration:none}.
  const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
  const get=async f=>(await fetch(f,{cache:'no-store'})).json();
  const [g,v]=await Promise.all([get('games.json'),get('versions.json')]);
- const builds=v.builds.slice().sort((a,b)=>b.date.localeCompare(a.date)); // stable: file order (newest first) within a day
+ // Sort newest first by `datetime` (ISO with offset, merge commit time in America/Los_Angeles); fall back to `date`.
+ const ts=b=>b.datetime?Date.parse(b.datetime):Date.parse(b.date+'T00:00:00-08:00');
+ const builds=v.builds.slice().sort((a,b)=>ts(b)-ts(a)); // stable: keeps file order on ties
+ const when=b=>b.datetime?`${b.datetime.slice(0,10)} ${b.datetime.slice(11,19)} PT`:b.date;
  const games=g.games.slice();
  for(const slug of new Set(builds.map(b=>b.game))) if(!games.some(x=>x.slug===slug)) games.push({slug,name:slug,description:''});
  const list=document.getElementById('list'); let playing=false;
@@ -33,12 +36,12 @@ a{color:#8ab4ff}.nav{display:inline-block;margin:0 0 12px;text-decoration:none}.
   list.innerHTML=`<h1>Playtest builds</h1><p class="sub">Playable web builds of Jan's Godot prototypes. Pick a game to see its builds. Browser builds are solo and offline.</p>`+
   games.map(x=>{const gb=builds.filter(b=>b.game===x.slug);
    return `<a class="card game" href="#${esc(x.slug)}" data-slug="${esc(x.slug)}"><h3>${esc(x.name)}</h3><p>${esc(x.description)}</p>`+
-   (gb.length?`<div class="meta">${gb.length} build${gb.length>1?'s':''} · latest ${esc(gb[0].date)}</div>`:`<div class="meta none">No builds yet</div>`)+`</a>`;}).join('');};
+   (gb.length?`<div class="meta">${gb.length} build${gb.length>1?'s':''} · latest ${esc(when(gb[0]))}</div>`:`<div class="meta none">No builds yet</div>`)+`</a>`;}).join('');};
  const gamePage=x=>{document.title=`${x.name} – playtest builds`;
   const gb=builds.filter(b=>b.game===x.slug);
   list.innerHTML=`<a class="nav" id="allgames" href="#">← All games</a><h1>${esc(x.name)}</h1><p class="sub">${esc(x.description)}</p>`+
   (gb.length?gb.map((b,i)=>`<div class="card"><h3>${esc(b.title)}${i===0?'<span class="latest">latest</span>':''}</h3>
-<div class="meta">${esc(b.date)} · <code>${esc(b.id)}</code> · ${esc(b.repo)} @ ${esc(b.sha)} · Godot ${esc(b.engine)}</div>
+<div class="meta">${esc(when(b))} · <code>${esc(b.id)}</code> · ${esc(b.repo)} @ ${esc(b.sha)} · Godot ${esc(b.engine)}</div>
 <p>${esc(b.summary)}</p>${b.controls?`<p><span class="lbl">Controls:</span> ${esc(b.controls)}</p>`:''}${b.test?`<p><span class="lbl">What to test:</span> ${esc(b.test)}</p>`:''}
 <button class="play" data-id="${esc(b.id)}">Play</button></div>`).join(''):`<p class="none">No builds yet.</p>`);
   document.getElementById('allgames').onclick=e=>{e.preventDefault();history.pushState(null,'',location.pathname);route();};
