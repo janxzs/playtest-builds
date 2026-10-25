@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-f1ba5cd-2026-10-25",
+      "game": "gears-clone",
+      "repo": "janxzs/GearsClone-Godot",
+      "pr": null,
+      "sha": "f1ba5cd",
+      "ticket": "first-person conversion",
+      "datetime": "2026-10-25T15:07:53-07:00",
+      "date": "2026-10-25",
+      "engine": "4.7.2",
+      "pck": "builds/gears-clone/main-f1ba5cd-2026-10-25/gears-clone.pck",
+      "title": "Gears Clone: first-person conversion",
+      "summary": "Gears Clone is now first person. You see the weapon in your hands, and right-click aims down the sights. In cover you crouch, then pop up or lean out to shoot. The rifle, sword, slingshot and bow each have their own animations.",
+      "controls": "Click to capture the mouse (that click doesn't fire). Mouse look, WASD move, Shift sprint. Right mouse aims down sights (in cover: pops up). Left mouse fires: hold for the rifle's auto fire, the sword swings, the slingshot fires per click, and the bow holds to draw and releases to shoot. 1-4 or the wheel switches weapon, R reloads, C or Ctrl crouches, E takes or leaves cover, A/D slide along cover. Esc frees the mouse.",
+      "test": "Can you see each of the 4 weapons in your hands, and does each have its own animation? Does right-click aim down the sights? In cover, does right-click pop you up to shoot over it, and do shots hit the dummy instead of your cover? Does the capture click leave your ammo unchanged?",
+      "status": "merged"
+    },
+    {
       "id": "main-2449788-2026-10-25",
       "game": "movement",
       "repo": "janxzs/Movement-Godot",

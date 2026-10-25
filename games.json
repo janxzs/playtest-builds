@@ -21,7 +21,7 @@
     {
       "slug": "gears-clone",
       "name": "Gears Clone",
-      "description": "A Gears of War-style third-person cover shooter benchmark: shoulder camera, aiming, hitscan, crouch, snap-to-cover and an ammo/reload HUD.",
+      "description": "A Gears of War-style cover shooter benchmark, now in first person: the weapon in your hands, aim down sights, crouch in cover and pop up or lean out to shoot, with a rifle, sword, slingshot and bow.",
       "repo": "janxzs/GearsClone-Godot",
       "project": ".",
       "scene": null
