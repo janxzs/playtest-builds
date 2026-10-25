@@ -1,32 +1,37 @@
 {
+  "_format": "Each game: slug (matches a build's `game` in versions.json and its builds/<slug>/ dir), name, one-line description (from the source README), repo (owner/name), project (dir in the repo holding project.godot), scene (main-scene override as res:// path, or null for the project's run/main_scene).",
   "games": [
     {
       "slug": "zeigote",
       "name": "Zeigote",
       "description": "A multiplayer day/night base-building survival game about a nanobot organism called the Zeigote.",
       "repo": "janxzs/Zeigote-Godot",
-      "path": "."
+      "project": ".",
+      "scene": null
     },
     {
       "slug": "tower-defense",
       "name": "Tower Defense",
-      "description": "Tower defense benchmark: Path3D enemy waves, grid tower placement, auto-targeting towers with homing projectiles, and a simple UI.",
-      "repo": "janxzs/Zeigote-Godot",
-      "path": "benchmarks/tower_defense"
+      "description": "Tower defense clone and Godot 4 engine benchmark: 3D greybox, enemies walking a Path3D in waves, grid-placed auto-targeting towers.",
+      "repo": "janxzs/Tower-Defense-Clone-Godot",
+      "project": ".",
+      "scene": null
     },
     {
       "slug": "gears-clone",
       "name": "Gears Clone",
       "description": "Third-person cover shooter benchmark: spring-arm shoulder camera, over-the-shoulder aim, hitscan, crouch, snap-to-cover and an ammo HUD.",
       "repo": "janxzs/Zeigote-Godot",
-      "path": "benchmarks/gears_clone"
+      "project": ".",
+      "scene": "res://benchmarks/gears_clone/gears_clone.tscn"
     },
     {
       "slug": "minecraft-clone",
       "name": "Minecraft Clone",
       "description": "Voxel benchmark: chunked ArrayMesh terrain, a first-person controller, and block break and place.",
       "repo": "janxzs/Zeigote-Godot",
-      "path": "benchmarks/minecraft_clone"
+      "project": ".",
+      "scene": "res://benchmarks/minecraft_clone/minecraft_clone.tscn"
     }
   ]
 }
