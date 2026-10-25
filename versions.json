@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-1fb9740-2026-10-24",
+      "game": "minecraft-clone",
+      "repo": "janxzs/Minecraft-Clone-Godot",
+      "pr": null,
+      "sha": "1fb9740",
+      "ticket": "VB-0003",
+      "datetime": "2026-10-24T21:01:06-07:00",
+      "date": "2026-10-24",
+      "engine": "4.7.2",
+      "pck": "builds/minecraft-clone/main-1fb9740-2026-10-24/minecraft-clone.pck",
+      "title": "Minecraft Clone M2: lighter meshing, no load freeze (VB-0003)",
+      "summary": "Same terrain drawn with about a third of the triangles. On the web the world fills in over about 2 s instead of freezing at load, and Esc no longer kills the page. Known gap: occasional ~9 ms frames from the no-threads mesher.",
+      "controls": "Click to capture the mouse (that click doesn't edit). Mouse look, WASD/arrows move, Space jump, Shift sprint, LMB break, RMB place plank, F toggles fly (Space/Ctrl move up and down). Esc releases the mouse; click to recapture.",
+      "test": "Break and place blocks quickly, including on chunk borders (every 16 blocks) and at height 16: edits should appear within a frame or two, with no holes, missing or doubled faces. After load the world should fill in nearest-first over ~2 s with no gaps. Terrain tris ~7.0k in the top-left label at start. Press F and fly around: no gaps or flickering between merged faces.",
+      "status": "merged"
+    },
+    {
       "id": "main-b201c82-2026-10-24",
       "game": "gears-clone",
       "repo": "janxzs/GearsClone-Godot",
