@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-56c4e01-2026-10-24",
+      "game": "gears-clone",
+      "repo": "janxzs/GearsClone-Godot",
+      "pr": null,
+      "sha": "56c4e01",
+      "ticket": "fix/web-camera-low-fps",
+      "datetime": "2026-10-24T21:16:23-07:00",
+      "date": "2026-10-24",
+      "engine": "4.7.2",
+      "pck": "builds/gears-clone/main-56c4e01-2026-10-24/gears-clone.pck",
+      "title": "Gears Clone: web camera fix at low FPS",
+      "summary": "Fixes the black shape and the sky-only view (camera smoothing blew up below ~10 FPS). On load you see the arena, cover, dummies and the player from behind. The first click only captures the mouse and no longer fires. Each shot shows a visible muzzle flash plus yellow tracers.",
+      "controls": "Click the game to capture the mouse (that click doesn't fire). WASD move, Shift sprint, hold right mouse to aim (pops you up out of cover), hold left mouse to fire, R reload, C/Ctrl crouch, E snap to cover or leave it, A/D slide along cover. Esc frees the mouse; click the game to recapture.",
+      "test": "On load you should see the arena, cover, dummies and the player from behind, not just sky, and the click that captures the mouse should not fire. Also: muzzle flash and yellow tracers on each shot, hits from cover (E, then hold right mouse and fire), sparks and scorch marks, and any stutter on the first shot.",
+      "status": "merged"
+    },
+    {
       "id": "main-1fb9740-2026-10-24",
       "game": "minecraft-clone",
       "repo": "janxzs/Minecraft-Clone-Godot",
