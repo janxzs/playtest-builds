@@ -15,6 +15,9 @@ a{color:#8ab4ff}.nav{display:inline-block;margin:0 0 12px;text-decoration:none}.
 #bar{position:fixed;left:6px;bottom:6px;z-index:2;padding:3px 6px;background:#0008;border-radius:6px;display:flex;gap:6px;align-items:center;font-size:11px;opacity:.45;transition:opacity .15s;pointer-events:auto}
 #bar:hover{opacity:1}
 #bar button{font:inherit;cursor:pointer;padding:1px 6px}
+.srv{background:#1c1c1c;border:1px solid #333;border-radius:12px;padding:12px 16px;margin:0 0 12px}
+.srv input{width:min(520px,100%);box-sizing:border-box;background:#111;color:#eee;border:1px solid #444;border-radius:8px;padding:7px 10px;font:inherit}
+.srv button{margin-left:6px;font:inherit;cursor:pointer}.srv .hint{color:#999;font-size:13px;margin:6px 0 0}.srv .bad{color:#f88}
 </style></head>
 <body>
 <div id="list">Loading...</div>
@@ -25,6 +28,17 @@ a{color:#8ab4ff}.nav{display:inline-block;margin:0 0 12px;text-decoration:none}.
 (async()=>{
  const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
  const get=async f=>(await fetch(f,{cache:'no-store'})).json();
+ // Multiplayer server address (games with `multiplayer: true` in games.json). Stored per game in localStorage;
+ // Play adds ?server=<url> before the hash so the Godot web build can read location.search. Hash routing is unchanged.
+ const srvKey=slug=>'playtest.server.'+slug;
+ const normServer=raw=>{let u=String(raw||'').trim(); if(!u) return '';
+  const m=u.match(/[?&]server=([^&#\s]+)/); if(m){try{u=decodeURIComponent(m[1]).trim();}catch(e){}}
+  if(/^https:\/\//i.test(u)) u='wss://'+u.slice(8); else if(/^http:\/\//i.test(u)) u='ws://'+u.slice(7); else if(!/^wss?:\/\//i.test(u)) u='wss://'+u;
+  return u.replace(/\/+$/,'');};
+ const serverProblem=u=>{if(!u) return ''; let x; try{x=new URL(u);}catch(e){return 'Not a valid URL.';}
+  if(x.protocol==='wss:') return ''; if(x.protocol==='ws:'&&/^(localhost|127\.0\.0\.1|\[::1\])$/.test(x.hostname)) return '';
+  return 'Use wss:// (this page is HTTPS, so browsers block plain ws:// except to localhost).';};
+ const urlServer=normServer(new URLSearchParams(location.search).get('server'));
  const [g,v]=await Promise.all([get('games.json'),get('versions.json')]);
  // Sort newest first by `datetime` (ISO with offset, merge commit time in America/Los_Angeles); fall back to `date`.
  const ts=b=>b.datetime?Date.parse(b.datetime):Date.parse(b.date+'T00:00:00-08:00');
@@ -33,28 +47,44 @@ a{color:#8ab4ff}.nav{display:inline-block;margin:0 0 12px;text-decoration:none}.
  const games=g.games.slice();
  for(const slug of new Set(builds.map(b=>b.game))) if(!games.some(x=>x.slug===slug)) games.push({slug,name:slug,description:''});
  const list=document.getElementById('list'); let playing=false;
+ { const h=decodeURIComponent(location.hash.slice(1)); const b=builds.find(x=>x.id===h); const slug=b?b.game:h;
+   if(urlServer&&!serverProblem(urlServer)&&games.some(y=>y.slug===slug)) localStorage.setItem(srvKey(slug),urlServer); }
+ const withSearch=(hash,server)=>location.pathname+(server?'?server='+encodeURIComponent(server):'')+'#'+encodeURIComponent(hash);
  const home=()=>{document.title='Playtest builds';
-  list.innerHTML=`<h1>Playtest builds</h1><p class="sub">Playable web builds of Jan's Godot prototypes. Pick a game to see its builds. Browser builds are solo and offline.</p>`+
+  list.innerHTML=`<h1>Playtest builds</h1><p class="sub">Playable web builds of Jan's Godot prototypes. Pick a game to see its builds. Browser builds are solo and offline, unless a game's page has a Server address for online co-op.</p>`+
   games.map(x=>{const gb=builds.filter(b=>b.game===x.slug);
    return `<a class="card game" href="#${esc(x.slug)}" data-slug="${esc(x.slug)}"><h3>${esc(x.name)}</h3><p>${esc(x.description)}</p>`+
    (gb.length?`<div class="meta">${gb.length} build${gb.length>1?'s':''} · latest ${esc(when(gb[0]))}</div>`:`<div class="meta none">No builds yet</div>`)+`</a>`;}).join('');};
  const gamePage=x=>{document.title=`${x.name} – playtest builds`;
   const gb=builds.filter(b=>b.game===x.slug);
+  const saved=x.multiplayer?(localStorage.getItem(srvKey(x.slug))||''):'';
   list.innerHTML=`<a class="nav" id="allgames" href="#">← All games</a><h1>${esc(x.name)}</h1><p class="sub">${esc(x.description)}</p>`+
+  (x.multiplayer?`<div class="srv"><label class="lbl" for="srvin">Server address</label><br><input id="srvin" placeholder="ws://127.0.0.1:9080 (this PC) or wss://… (remote); empty = solo" value="${esc(saved)}" spellcheck="false" autocomplete="off"><button id="srvlocal" title="Server started on this PC by start-zeigote-server.bat">This PC</button><button id="srvclr">Clear</button>
+<p class="hint" id="srvhint">Paste the wss://….trycloudflare.com address (or the whole friend link) from the host's server window, or just open the link it printed. Saved in this browser. Empty = solo offline.</p></div>`:'')+
   (gb.length?gb.map((b,i)=>`<div class="card"><h3>${esc(b.title)}${i===0?'<span class="latest">latest</span>':''}</h3>
 <div class="meta">${esc(when(b))} · <code>${esc(b.id)}</code> · ${esc(b.repo)} @ ${esc(b.sha)} · Godot ${esc(b.engine)}</div>
 <p>${esc(b.summary)}</p>${b.controls?`<p><span class="lbl">Controls:</span> ${esc(b.controls)}</p>`:''}${b.test?`<p><span class="lbl">What to test:</span> ${esc(b.test)}</p>`:''}
 <button class="play" data-id="${esc(b.id)}">Play</button></div>`).join(''):`<p class="none">No builds yet.</p>`);
-  document.getElementById('allgames').onclick=e=>{e.preventDefault();history.pushState(null,'',location.pathname);route();};
-  list.querySelectorAll('.play').forEach(btn=>btn.onclick=()=>{location.hash=btn.dataset.id;});};
+  const inp=document.getElementById('srvin'), hint=document.getElementById('srvhint');
+  const cur=()=>inp?normServer(inp.value):'';
+  if(inp){const chk=()=>{const p=serverProblem(cur()); hint.className='hint'+(p?' bad':''); hint.textContent=p||'Saved in this browser. Empty = solo offline.';
+     if(!p){ if(cur()) localStorage.setItem(srvKey(x.slug),cur()); else localStorage.removeItem(srvKey(x.slug)); }};
+   inp.oninput=chk; document.getElementById('srvclr').onclick=()=>{inp.value='';chk();};
+   document.getElementById('srvlocal').onclick=()=>{inp.value='ws://127.0.0.1:9080';chk();};}
+  document.getElementById('allgames').onclick=e=>{e.preventDefault();history.pushState(null,'',location.pathname+location.search);route();};
+  list.querySelectorAll('.play').forEach(btn=>btn.onclick=()=>{
+   const server=x.multiplayer?cur():''; if(server&&serverProblem(server)){inp.focus();return;}
+   const target=withSearch(btn.dataset.id,server);
+   if(target===location.pathname+location.search+'#'+encodeURIComponent(btn.dataset.id)) location.hash=btn.dataset.id; // same query: hash route only
+   else location.assign(target);});};
  const play=b=>{playing=true;document.title=`${b.title} (${b.id})`;
   list.style.display='none';document.getElementById('game').style.display='block';
-  document.getElementById('back').onclick=()=>location.assign(location.pathname+'#'+encodeURIComponent(b.game)); // reload: engine can't restart in place
+  document.getElementById('back').onclick=()=>location.assign(location.pathname+location.search+'#'+encodeURIComponent(b.game)); // reload: engine can't restart in place
   const st=document.getElementById('st');const eng=`engine/${b.engine}/`;
   const s=document.createElement('script');s.src=eng+'index.js';
   s.onload=()=>{const e=new Engine({executable:eng+'index',mainPack:b.pck,canvasResizePolicy:2,focusCanvas:true,ensureCrossOriginIsolationHeaders:false,args:[]});
    e.startGame({onProgress:(c,t)=>st.textContent=t?`loading ${Math.round(100*c/t)}%`:'loading'})
-    .then(()=>{st.textContent=b.id;document.getElementById('canvas').focus();},err=>st.textContent='error: '+err);};
+    .then(()=>{st.textContent=b.id+(urlServer?' · server '+urlServer.replace(/^wss?:\/\//,''):'');document.getElementById('canvas').focus();},err=>st.textContent='error: '+err);};
   document.head.appendChild(s);};
  let last=null; // hashchange and popstate can both fire for one navigation; act once per URL
  const route=()=>{const h=decodeURIComponent(location.hash.slice(1)); if(h===last) return; last=h;

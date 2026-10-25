@@ -1,0 +1,43 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zeigote server check</title><link rel="icon" href="data:,">
+<style>body{background:#111;color:#ddd;font:15px/1.5 system-ui,sans-serif;max-width:760px;margin:24px auto;padding:0 16px}
+input{width:min(520px,100%);background:#1c1c1c;color:#eee;border:1px solid #444;border-radius:6px;padding:6px 8px;font:inherit}
+button{font:inherit;padding:6px 14px;border-radius:6px;border:0;background:#3b82f6;color:#fff;cursor:pointer}
+pre{background:#1c1c1c;border:1px solid #333;border-radius:8px;padding:10px;white-space:pre-wrap}.ok{color:#7d7}.bad{color:#f88}</style></head>
+<body>
+<h1>Can this browser reach the Zeigote server?</h1>
+<p><b>On the host's PC:</b> start the server (start-zeigote-server.bat), keep <code>ws://127.0.0.1:9080</code> and press Test. The first time,
+the browser may ask to let this site "access other apps and services on this device". Choose <b>Allow</b>.<br>
+<b>Friends:</b> paste the <code>wss://….trycloudflare.com</code> address (or the whole friend link) and press Test. No prompt is expected.</p>
+<p><input id="u" value="ws://127.0.0.1:9080" spellcheck="false"> <button id="go">Test</button></p>
+<pre id="out"></pre>
+<script>
+// Planned path in the builds repo: /wscheck.html (served from https://janxzs.github.io, the same origin as the picker,
+// so the browser's Local Network Access permission decision tested here is the one the game uses).
+// It must be a page on that origin: a data: URL has an opaque origin and wouldn't test the picker's permission.
+const out=document.getElementById('out'), log=(m,c)=>{const s=document.createElement('span'); if(c) s.className=c; s.textContent=m+'\n'; out.appendChild(s);};
+const norm=raw=>{let u=String(raw||'').trim(); const m=u.match(/[?&]server=([^&#\s]+)/); if(m){try{u=decodeURIComponent(m[1]).trim();}catch(e){}}
+  if(/^https:\/\//i.test(u)) u='wss://'+u.slice(8); else if(/^http:\/\//i.test(u)) u='ws://'+u.slice(7); else if(u&&!/^wss?:\/\//i.test(u)) u='wss://'+u;
+  return u.replace(/\/+$/,'');};
+const q=new URLSearchParams(location.search).get('server'); if(q) document.getElementById('u').value=norm(q);
+async function perm(name){ try{ return (await navigator.permissions.query({name})).state; }catch(e){ return 'not supported in this browser'; } }
+document.getElementById('go').onclick=async()=>{
+  out.textContent='';
+  log('Browser: '+navigator.userAgent);
+  log('Page origin: '+location.origin+'   secure context: '+window.isSecureContext);
+  log('Permission loopback-network: '+await perm('loopback-network')+'   local-network: '+await perm('local-network')+'   local-network-access: '+await perm('local-network-access'));
+  const url=norm(document.getElementById('u').value), t0=performance.now(); let opened=false, bytes=0;
+  log('Connecting to '+url+' ... (answer the browser prompt if one appears)');
+  let ws; try{ ws=new WebSocket(url); }catch(e){ log('Blocked before connecting: '+e.name+': '+e.message+'  (mixed content? plain ws:// only works to 127.0.0.1/localhost; remote servers need wss://)','bad'); return; }
+  ws.binaryType='arraybuffer';
+  const timer=setTimeout(()=>{ if(!opened){ log('Still waiting after 20 s: is a permission prompt open, or is the server not running?','bad'); } },20000);
+  ws.onopen=()=>{ opened=true; log('OPEN after '+Math.round(performance.now()-t0)+' ms: the browser can reach the server.','ok');
+    setTimeout(()=>{ log('Received '+bytes+' bytes from the server in 2 s'+(bytes?' (Godot handshake seen).':' (none; still OK if the server only talks after joining).')); ws.close(1000,'check done'); },2000); };
+  ws.onmessage=e=>{ bytes+=(e.data.byteLength ?? String(e.data).length); };
+  ws.onerror=()=>{ log('WebSocket error (browsers hide the reason). See the close code and permission state below.','bad'); };
+  ws.onclose=async e=>{ clearTimeout(timer); log('CLOSED code='+e.code+(e.reason?' reason='+e.reason:'')+' clean='+e.wasClean, opened?'':'bad');
+    if(!opened){ const p=await perm('loopback-network');
+      if(p==='denied') log('-> The site is BLOCKED from local apps. Fix: click the icon left of the address bar -> Site settings -> allow the local network / apps-on-this-device permission, then reload.','bad');
+      else log('-> Permission is "'+p+'". Most likely the server is not running on that port (or bound elsewhere). Check the server window.','bad'); } };
+};
+</script></body></html>
