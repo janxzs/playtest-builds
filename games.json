@@ -28,10 +28,10 @@
     {
       "slug": "minecraft-clone",
       "name": "Minecraft Clone",
-      "description": "Voxel benchmark: chunked ArrayMesh terrain, a first-person controller, and block break and place.",
-      "repo": "janxzs/Zeigote-Godot",
+      "description": "Minecraft-style voxel benchmark in Godot 4.7.2: how far Godot 4 and GDScript can take voxel meshing, streaming and editing.",
+      "repo": "janxzs/Minecraft-Clone-Godot",
       "project": ".",
-      "scene": "res://benchmarks/minecraft_clone/minecraft_clone.tscn"
+      "scene": null
     }
   ]
 }

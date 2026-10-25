@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-9ecc88f-2026-10-24",
+      "game": "minecraft-clone",
+      "repo": "janxzs/Minecraft-Clone-Godot",
+      "pr": null,
+      "sha": "9ecc88f",
+      "date": "2026-10-24",
+      "engine": "4.7.2",
+      "pck": "builds/minecraft-clone/main-9ecc88f-2026-10-24/minecraft-clone.pck",
+      "title": "Minecraft Clone M0 baseline",
+      "summary": "A small 64\u00d764-block world with grass hills you can walk around, break blocks in and build on with planks. FPS and remesh stats show top-left.",
+      "controls": "Click to capture the mouse and look. WASD/arrows move, Space jump, Shift sprint, left mouse breaks a block, right mouse places a plank. Esc quits (in the browser use Back to builds instead).",
+      "test": "Does walking, jumping and looking feel right? Do breaking and placing blocks hit the block under the crosshair? Watch the FPS and remesh numbers top-left while you edit, and report stutter.",
+      "status": "merged",
+      "ticket": "VB-0001",
+      "datetime": "2026-10-24T20:23:35-07:00"
+    },
+    {
       "id": "main-27c011f-2026-10-24",
       "game": "gears-clone",
       "repo": "janxzs/GearsClone-Godot",
