@@ -20,10 +20,10 @@
     {
       "slug": "gears-clone",
       "name": "Gears Clone",
-      "description": "Third-person cover shooter benchmark: spring-arm shoulder camera, over-the-shoulder aim, hitscan, crouch, snap-to-cover and an ammo HUD.",
-      "repo": "janxzs/Zeigote-Godot",
+      "description": "A Gears of War-style third-person cover shooter benchmark: shoulder camera, aiming, hitscan, crouch, snap-to-cover and an ammo/reload HUD.",
+      "repo": "janxzs/GearsClone-Godot",
       "project": ".",
-      "scene": "res://benchmarks/gears_clone/gears_clone.tscn"
+      "scene": null
     },
     {
       "slug": "minecraft-clone",

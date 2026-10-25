@@ -1,6 +1,40 @@
 {
   "builds": [
     {
+      "id": "main-27c011f-2026-10-24",
+      "game": "gears-clone",
+      "repo": "janxzs/GearsClone-Godot",
+      "pr": null,
+      "sha": "27c011f",
+      "date": "2026-10-24",
+      "engine": "4.7.2",
+      "pck": "builds/gears-clone/main-27c011f-2026-10-24/gears-clone.pck",
+      "title": "Gears Clone M0: standalone extract",
+      "summary": "A greybox third-person cover shooter with a shoulder camera, aiming, automatic hitscan fire with reloads, crouch, and snap-to-cover with sliding along it, against respawning orange target dummies.",
+      "controls": "Click to capture the mouse. WASD move, Shift sprint, hold RMB to aim, hold LMB to fire, R reload, C/Ctrl crouch, E snap to cover or leave it, A/D slide along cover. Esc frees the mouse; don't press it a second time in the browser (it quits and freezes the game, use Back to builds instead).",
+      "test": "Does the shoulder camera and aiming feel responsive? Does snapping to cover with E, sliding along it and popping out to aim feel right? Do hits on the orange dummies register where the crosshair is (known: shots can hit your own cover just in front of you)? Any stutter or low frame rate in the browser.",
+      "status": "merged",
+      "ticket": "M0",
+      "datetime": "2026-10-24T20:28:13-07:00"
+    },
+    {
+      "id": "main-9ec3896-2026-10-24",
+      "game": "zeigote",
+      "repo": "janxzs/Zeigote-Godot",
+      "pr": null,
+      "sha": "9ec3896",
+      "date": "2026-10-24",
+      "engine": "4.7.2",
+      "pck": "builds/zeigote/main-9ec3896-2026-10-24/zeigote.pck",
+      "title": "Zeigote: enemies hunt you + first-person view (ZG-0019, ZG-0020)",
+      "summary": "Zeigote now chase and attack you within about 8 m, with a red hit flash, HP loss, feed lines and downed/respawn in normal play. The Nexus label is large and readable again, and there's an optional first-person view.",
+      "controls": "Click the title to start. WASD/arrows move, Space or left mouse attacks (where you look in first person), E deposits at the Nexus or harvests resource nodes, N calls the next wave, V toggles first person (click to lock the mouse; Esc or losing the lock releases it and pauses), P/Esc pauses, R restarts. Top-down is the default.",
+      "test": "First person (V): does pointer lock grab and release cleanly in your browser, and is aiming melee at the crosshair readable? Do the Zeigote come for you within about 8 m, and do the hits feel fair (wind-up, red flash)? Wave pacing, Tier 2 reachability, stuck spots, HUD overlap and performance.",
+      "status": "merged",
+      "ticket": "ZG-0019, ZG-0020",
+      "datetime": "2026-10-24T20:26:36-07:00"
+    },
+    {
       "id": "main-f82f465-2026-10-24",
       "game": "zeigote",
       "repo": "janxzs/Zeigote-Godot",
