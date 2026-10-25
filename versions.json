@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-b201c82-2026-10-24",
+      "game": "gears-clone",
+      "repo": "janxzs/GearsClone-Godot",
+      "pr": null,
+      "sha": "b201c82",
+      "ticket": "feature/gun-and-projectiles",
+      "datetime": "2026-10-24T20:59:59-07:00",
+      "date": "2026-10-24",
+      "engine": "4.7.2",
+      "pck": "builds/gears-clone/main-b201c82-2026-10-24/gears-clone.pck",
+      "title": "Gears Clone: visible rifle and projectile bullets",
+      "summary": "The player now holds a visible rifle, and each shot shows a muzzle flash and a yellow tracer bullet that flies to the crosshair, with sparks and scorch marks on walls. Popping out of cover to aim now hits the dummy instead of your own cover.",
+      "controls": "Click the game to capture the mouse. WASD move, Shift sprint, hold right mouse to aim (pops you up out of cover), hold left mouse to fire, R reload, C/Ctrl crouch, E snap to cover or leave it, A/D slide along cover. Esc frees the mouse; click the game to recapture.",
+      "test": "Is the rifle visible and held right (low when walking, raised when aiming, muzzle-up in cover, lower when crouched)? Does firing show a muzzle flash and yellow tracers to the crosshair, with hits landing a moment later? From cover (E), hold right mouse and fire at a dummy: do shots hit the dummy, not your cover? Do wall and floor hits leave a spark and a fading scorch mark? Does hip fire turn you to the crosshair? Any stutter on the first shot or low frame rate. Known: firing low in cover without aiming hits your own cover (no blind fire yet).",
+      "status": "merged"
+    },
+    {
       "id": "main-5fa21d4-2026-10-24",
       "game": "zeigote",
       "repo": "janxzs/Zeigote-Godot",
@@ -35,23 +52,6 @@
       "datetime": "2026-10-24T20:40:37-07:00"
     },
     {
-      "id": "main-9ecc88f-2026-10-24",
-      "game": "minecraft-clone",
-      "repo": "janxzs/Minecraft-Clone-Godot",
-      "pr": null,
-      "sha": "9ecc88f",
-      "date": "2026-10-24",
-      "engine": "4.7.2",
-      "pck": "builds/minecraft-clone/main-9ecc88f-2026-10-24/minecraft-clone.pck",
-      "title": "Minecraft Clone M0 baseline",
-      "summary": "A small 64\u00d764-block world with grass hills you can walk around, break blocks in and build on with planks. FPS and remesh stats show top-left.",
-      "controls": "Click to capture the mouse and look. WASD/arrows move, Space jump, Shift sprint, left mouse breaks a block, right mouse places a plank. Esc quits (in the browser use Back to builds instead).",
-      "test": "Does walking, jumping and looking feel right? Do breaking and placing blocks hit the block under the crosshair? Watch the FPS and remesh numbers top-left while you edit, and report stutter.",
-      "status": "merged",
-      "ticket": "VB-0001",
-      "datetime": "2026-10-24T20:23:35-07:00"
-    },
-    {
       "id": "main-27c011f-2026-10-24",
       "game": "gears-clone",
       "repo": "janxzs/GearsClone-Godot",
@@ -84,6 +84,23 @@
       "status": "merged",
       "ticket": "ZG-0019, ZG-0020",
       "datetime": "2026-10-24T20:26:36-07:00"
+    },
+    {
+      "id": "main-9ecc88f-2026-10-24",
+      "game": "minecraft-clone",
+      "repo": "janxzs/Minecraft-Clone-Godot",
+      "pr": null,
+      "sha": "9ecc88f",
+      "date": "2026-10-24",
+      "engine": "4.7.2",
+      "pck": "builds/minecraft-clone/main-9ecc88f-2026-10-24/minecraft-clone.pck",
+      "title": "Minecraft Clone M0 baseline",
+      "summary": "A small 64\u00d764-block world with grass hills you can walk around, break blocks in and build on with planks. FPS and remesh stats show top-left.",
+      "controls": "Click to capture the mouse and look. WASD/arrows move, Space jump, Shift sprint, left mouse breaks a block, right mouse places a plank. Esc quits (in the browser use Back to builds instead).",
+      "test": "Does walking, jumping and looking feel right? Do breaking and placing blocks hit the block under the crosshair? Watch the FPS and remesh numbers top-left while you edit, and report stutter.",
+      "status": "merged",
+      "ticket": "VB-0001",
+      "datetime": "2026-10-24T20:23:35-07:00"
     },
     {
       "id": "main-f82f465-2026-10-24",
