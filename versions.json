@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-4aae2df-2026-10-25",
+      "game": "zeigote",
+      "repo": "janxzs/Zeigote-Godot",
+      "pr": null,
+      "sha": "4aae2df",
+      "ticket": "ZG-0025",
+      "datetime": "2026-10-25T11:10:20-07:00",
+      "date": "2026-10-25",
+      "engine": "4.7.2",
+      "pck": "builds/zeigote/main-4aae2df-2026-10-25/zeigote.pck",
+      "title": "Zeigote co-op player tags (ZG-0025)",
+      "summary": "Each co-op player now has a number (P1-P4), its own body colour and a 'P#' tag above its head, and the HUD shows 'You are P#'. Other players move smoothly (100 ms interpolation). A tab left in the background stays connected and catches up when shown again. To play together, start this build's server (zeigote-server zip from the Zeigote-Godot release) and use the Server address field on the Zeigote page.",
+      "controls": "No new controls. Click to start and lock the mouse. Mouse look, WASD move, Space jump, left mouse attacks, hold right mouse to block, E harvest/deposit, N calls the next wave, Esc/P menu (online it doesn't pause the world), R restart (online: restarts the match for everyone), V top-down debug view.",
+      "test": "Co-op: does every player have a different colour and a P# tag, and does the HUD say 'You are P#'? Do other players move smoothly? Put a tab in the background for half a minute, then come back: is it still connected and caught up? Also: a different build is refused with a version-mismatch message.",
+      "status": "merged"
+    },
+    {
       "id": "main-e69816b-2026-10-24",
       "game": "zeigote",
       "repo": "janxzs/Zeigote-Godot",
@@ -197,7 +214,7 @@
       "engine": "4.7.2",
       "pck": "builds/minecraft-clone/main-9ecc88f-2026-10-24/minecraft-clone.pck",
       "title": "Minecraft Clone M0 baseline",
-      "summary": "A small 64\u00d764-block world with grass hills you can walk around, break blocks in and build on with planks. FPS and remesh stats show top-left.",
+      "summary": "A small 64×64-block world with grass hills you can walk around, break blocks in and build on with planks. FPS and remesh stats show top-left.",
       "controls": "Click to capture the mouse and look. WASD/arrows move, Space jump, Shift sprint, left mouse breaks a block, right mouse places a plank. Esc quits (in the browser use Back to builds instead).",
       "test": "Does walking, jumping and looking feel right? Do breaking and placing blocks hit the block under the crosshair? Watch the FPS and remesh numbers top-left while you edit, and report stutter.",
       "status": "merged",
