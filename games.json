@@ -12,7 +12,7 @@
     {
       "slug": "tower-defense",
       "name": "Tower Defense",
-      "description": "Tower defense clone and Godot 4 engine benchmark: 3D greybox, enemies walking a Path3D in waves, grid-placed auto-targeting towers.",
+      "description": "A small 3D greybox tower defense game that doubles as a Godot 4 engine benchmark: enemies walk a Path3D in 20 waves, you build Gun, Cannon and Frost towers on a grid, upgrade them, sell them and pick their targets.",
       "repo": "janxzs/Tower-Defense-Clone-Godot",
       "project": ".",
       "scene": null

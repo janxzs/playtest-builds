@@ -69,6 +69,23 @@
       "status": "merged"
     },
     {
+      "id": "main-e054890-2026-10-24",
+      "game": "tower-defense",
+      "repo": "janxzs/Tower-Defense-Clone-Godot",
+      "pr": null,
+      "sha": "e054890",
+      "ticket": null,
+      "datetime": "2026-10-24T20:51:42-07:00",
+      "date": "2026-10-24",
+      "engine": "4.7.2",
+      "pck": "builds/tower-defense/main-e054890-2026-10-24/tower-defense.pck",
+      "title": "Tower Defense M1: first playable build",
+      "summary": "A 3D greybox tower defense. Build Gun, Cannon and Frost towers beside the path, then upgrade, sell and retarget them to survive 20 waves of Grunts, fast Runners and armored Brutes.",
+      "controls": "Click to start. 1-3 or the build bar picks a tower; LMB places or selects, RMB cancels; U upgrade, X sell, Tab cycle targeting; N, Enter or Space starts the next wave; F speed 1x/2x/3x; P pause; WASD, arrows or middle-drag pan; wheel zoom; F3 stats; Esc pause menu.",
+      "test": "Does the title click start the game without placing a tower? Building: the ghost turns green/red, the range ring shows, money goes down. Select a tower: do Upgrade, Sell and Target (and U / X / Tab) work? Waves: Runners rush at the end, Brutes shrug off Gun hits; are Cannons and Frost useful? Is it too easy? Do camera pan and zoom feel OK, and do the Esc menu's Resume and Restart work? Known: balance not tuned, no sound, greybox only.",
+      "status": "merged"
+    },
+    {
       "id": "main-09ff706-2026-10-24",
       "game": "gears-clone",
       "repo": "janxzs/GearsClone-Godot",
