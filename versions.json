@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-147c7d6-2026-10-25",
+      "game": "minecraft-clone",
+      "repo": "janxzs/Minecraft-Clone-Godot",
+      "pr": null,
+      "sha": "147c7d6",
+      "ticket": "VB-0017",
+      "datetime": "2026-10-25T15:21:31-07:00",
+      "date": "2026-10-25",
+      "engine": "4.7.2",
+      "pck": "builds/minecraft-clone/main-147c7d6-2026-10-25/minecraft-clone.pck",
+      "title": "Minecraft Clone: render distance setting and far-terrain detail (VB-0017)",
+      "summary": "O or Esc opens Settings with a Render distance slider from 48 to 640 m. Your choice is saved, and the web default is 128 m. Far terrain is simplified and gains detail as you get closer. The warm cave light now reaches into the tunnels.",
+      "controls": "Click to capture the mouse (that click doesn't swing). Mouse look, WASD move, Space jump, Shift sprint, F fly. 1 Axe / 2 Pickaxe / 3 Sculpt or the mouse wheel. Hold left mouse to chop, break or dig; hold right mouse to raise ground (Sculpt). Esc releases the mouse. O opens Settings (Esc also opens them).",
+      "test": "Open Settings (O) and move the Render distance slider, for example to 320 or 640 m: does the view reach further? Reload the page: is your setting kept? At 640 m from the hills, can you see the whole ring, and how much does FPS drop? Walk into a cave at the foot of the hills: is the warm light there?",
+      "status": "merged"
+    },
+    {
       "id": "main-f1ba5cd-2026-10-25",
       "game": "gears-clone",
       "repo": "janxzs/GearsClone-Godot",
