@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-c366b48-2026-10-25",
+      "game": "minecraft-clone",
+      "repo": "janxzs/Minecraft-Clone-Godot",
+      "pr": null,
+      "sha": "c366b48",
+      "ticket": "VB-0015, VB-0016",
+      "datetime": "2026-10-25T12:25:16-07:00",
+      "date": "2026-10-25",
+      "engine": "4.7.2",
+      "pck": "builds/minecraft-clone/main-c366b48-2026-10-25/minecraft-clone.pck",
+      "title": "Minecraft Clone M4: ring desert map (VB-0015)",
+      "summary": "A new map: a 10,000 BC Mesopotamian desert ring of dunes, date palms, acacias, rocks and oases, with steep hills and caves all round so you never see the edge. The axe chops trees for wood and the pickaxe breaks rocks for stone (counters top right). Holding a button now keeps repeating even at low FPS (VB-0016). The world takes a few seconds to build on the web, and FPS is lower than before (about 38k triangles).",
+      "controls": "Click to capture the mouse (that click doesn't swing). Mouse look, WASD move, Space jump, Shift sprint, F fly. 1 Axe / 2 Pickaxe / 3 Sculpt or the mouse wheel. Hold left mouse to chop, break or dig; hold right mouse to raise ground (Sculpt). Esc releases the mouse.",
+      "test": "Chop a palm (4 hits) or acacia (5) with the axe and break a rock (3 hits) with the pickaxe: do the wood and stone counters rise? Does holding the button keep repeating? Walk outward: do the hills hide the edge of the map, and can you walk into a cave? Wade into the oasis in front of you.",
+      "status": "merged"
+    },
+    {
       "id": "main-43fccb0-2026-10-25",
       "game": "gears-clone",
       "repo": "janxzs/GearsClone-Godot",

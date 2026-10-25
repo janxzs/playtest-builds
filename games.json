@@ -29,10 +29,10 @@
     {
       "slug": "minecraft-clone",
       "name": "Minecraft Clone",
-      "description": "Minecraft-style voxel benchmark in Godot 4.7.2: how far Godot 4 and GDScript can take voxel meshing, streaming and editing.",
+      "description": "Smooth-terrain sandbox benchmark in Godot 4.7.2, now set in a 10,000 BC Mesopotamian desert ring: dunes, palms, oases and hills with caves. Chop wood, break stone, sculpt the sand.",
       "repo": "janxzs/Minecraft-Clone-Godot",
       "project": ".",
-      "scene": null
+      "scene": "res://scenes/main.tscn"
     }
   ]
 }
