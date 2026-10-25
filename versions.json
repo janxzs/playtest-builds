@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-3dfde25-2026-10-24",
+      "game": "minecraft-clone",
+      "repo": "janxzs/Minecraft-Clone-Godot",
+      "pr": null,
+      "sha": "3dfde25",
+      "ticket": "VB-0014",
+      "datetime": "2026-10-24T22:01:13-07:00",
+      "date": "2026-10-24",
+      "engine": "4.7.2",
+      "pck": "builds/minecraft-clone/main-3dfde25-2026-10-24/minecraft-clone.pck",
+      "title": "Minecraft Clone M3: smooth Valheim-style terrain (VB-0014)",
+      "summary": "The block world is gone. It's now smooth Valheim-style terrain with meadows, rolling hills and rock cliffs, grass and rock blended by slope, a procedural sky, fog and warm sunlight. You can dig and build up the ground with a soft brush. On the web expect a 4.5-7 s load and about 5-8 FPS on a software renderer.",
+      "controls": "Click to capture the mouse (the first click doesn't dig). Hold left mouse to dig and hold right mouse to raise a soft 1.5 m sphere (repeats every 0.12 s; a preview sphere shows where it lands). WASD move, Space jump, Shift sprint, F fly. Esc releases the mouse and never quits.",
+      "test": "Dig and raise quickly, including across section borders (every 16 m in x/z and at heights 16/32/48): no cracks, holes or flickering seams. Walk up and down slopes: hills up to ~45 degrees are walkable, steeper cliffs block you, no bouncing downhill or snagging on invisible edges. Dig a crater and walk in and out; raise a mound and stand on it. Look: grass on flat ground, rock on steep slopes, brown dirt where you edited, soft fog in the distance. On web the world builds in over a few seconds. Terrain tris ~24.9k in the top-left label at start.",
+      "status": "merged"
+    },
+    {
       "id": "main-bbdb15b-2026-10-24",
       "game": "zeigote",
       "repo": "janxzs/Zeigote-Godot",
