@@ -2,10 +2,13 @@
 <style>
 html,body{margin:0;height:100%;background:#111;color:#ddd;font:15px/1.45 system-ui,sans-serif}
 #list{max-width:900px;margin:0 auto;padding:24px 16px 48px}
-h1{font-size:24px;margin:0 0 4px}h2{font-size:18px;margin:28px 0 10px;color:#fff}.sub{color:#999;margin:0 0 8px}
+h1{font-size:24px;margin:0 0 4px}.sub{color:#999;margin:0 0 16px}
+a{color:#8ab4ff}.nav{display:inline-block;margin:0 0 12px;text-decoration:none}.nav:hover{text-decoration:underline}
 .card{background:#1c1c1c;border:1px solid #333;border-radius:12px;padding:14px 16px;margin:0 0 12px}
 .card h3{margin:0;font-size:16px;color:#fff}.meta{color:#999;font-size:13px;margin:2px 0 8px}.meta code{color:#bbb}
 .card p{margin:6px 0}.lbl{color:#aaa;font-weight:600}
+.game{display:block;cursor:pointer;text-decoration:none;color:inherit}.game:hover{border-color:#556;background:#202024}
+.game h3{font-size:18px}.none{color:#888;font-style:italic}
 .play{margin-top:8px;background:#3b82f6;color:#fff;border:0;border-radius:8px;padding:8px 18px;font:inherit;font-weight:600;cursor:pointer}
 .play:hover{background:#2563eb}.latest{font-size:12px;background:#264;color:#cfe;border-radius:6px;padding:1px 6px;margin-left:6px}
 #game{display:none;height:100%}#game canvas{display:block;width:100%;height:100%}
@@ -13,36 +16,49 @@ h1{font-size:24px;margin:0 0 4px}h2{font-size:18px;margin:28px 0 10px;color:#fff
 #bar button{font:inherit;cursor:pointer}
 </style></head>
 <body>
-<div id="list"><h1>Playtest builds</h1><p class="sub">Playable web builds of Jan's Godot prototypes, newest first. Pick a build and press Play. Browser builds are solo and offline.</p><div id="cards">Loading builds...</div></div>
+<div id="list">Loading...</div>
 <div id="game"><div id="bar"><span id="st"></span><button id="back">Back to builds</button></div><canvas id="canvas" tabindex="0"></canvas></div>
 <script>
+// Routing: no hash = all games; #<game-slug> = that game's builds; #<build-id> = play that build.
+// Games come from games.json, builds from versions.json (both data; adding a game needs no code change).
 (async()=>{
  const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
- const v=await (await fetch('versions.json',{cache:'no-store'})).json();
+ const get=async f=>(await fetch(f,{cache:'no-store'})).json();
+ const [g,v]=await Promise.all([get('games.json'),get('versions.json')]);
  const builds=v.builds.slice().sort((a,b)=>b.date.localeCompare(a.date)); // stable: file order (newest first) within a day
- const want=decodeURIComponent(location.hash.slice(1));
- window.addEventListener('hashchange',()=>location.reload());
- const cur=want&&builds.find(b=>b.id===want);
- if(!cur){ // landing list: grouped by game, newest first; engine is NOT loaded here
-  const games=[...new Set(builds.map(b=>b.game))];
-  document.getElementById('cards').innerHTML=games.map(g=>{
-   const gb=builds.filter(b=>b.game===g);
-   return `<h2>${esc(g.charAt(0).toUpperCase()+g.slice(1))}</h2>`+gb.map((b,i)=>`<div class="card"><h3>${esc(b.title)}${i===0?'<span class="latest">latest</span>':''}</h3>
+ const games=g.games.slice();
+ for(const slug of new Set(builds.map(b=>b.game))) if(!games.some(x=>x.slug===slug)) games.push({slug,name:slug,description:''});
+ const list=document.getElementById('list'); let playing=false;
+ const home=()=>{document.title='Playtest builds';
+  list.innerHTML=`<h1>Playtest builds</h1><p class="sub">Playable web builds of Jan's Godot prototypes. Pick a game to see its builds. Browser builds are solo and offline.</p>`+
+  games.map(x=>{const gb=builds.filter(b=>b.game===x.slug);
+   return `<a class="card game" href="#${esc(x.slug)}" data-slug="${esc(x.slug)}"><h3>${esc(x.name)}</h3><p>${esc(x.description)}</p>`+
+   (gb.length?`<div class="meta">${gb.length} build${gb.length>1?'s':''} · latest ${esc(gb[0].date)}</div>`:`<div class="meta none">No builds yet</div>`)+`</a>`;}).join('');};
+ const gamePage=x=>{document.title=`${x.name} – playtest builds`;
+  const gb=builds.filter(b=>b.game===x.slug);
+  list.innerHTML=`<a class="nav" id="allgames" href="#">← All games</a><h1>${esc(x.name)}</h1><p class="sub">${esc(x.description)}</p>`+
+  (gb.length?gb.map((b,i)=>`<div class="card"><h3>${esc(b.title)}${i===0?'<span class="latest">latest</span>':''}</h3>
 <div class="meta">${esc(b.date)} · <code>${esc(b.id)}</code> · ${esc(b.repo)} @ ${esc(b.sha)} · Godot ${esc(b.engine)}</div>
 <p>${esc(b.summary)}</p>${b.controls?`<p><span class="lbl">Controls:</span> ${esc(b.controls)}</p>`:''}${b.test?`<p><span class="lbl">What to test:</span> ${esc(b.test)}</p>`:''}
-<button class="play" data-id="${esc(b.id)}">Play</button></div>`).join('')}).join('')+(want?`<p class="sub">No build called ${esc(want)}.</p>`:'');
-  document.querySelectorAll('.play').forEach(btn=>btn.onclick=()=>{location.hash=btn.dataset.id;});
-  return;
- }
- document.title=`${cur.title} (${cur.id})`;
- document.getElementById('list').style.display='none'; document.getElementById('game').style.display='block';
- document.getElementById('back').onclick=()=>location.assign(location.pathname);
- const st=document.getElementById('st'); const eng=`engine/${cur.engine}/`;
- const s=document.createElement('script'); s.src=eng+'index.js';
- s.onload=()=>{
-  const e=new Engine({executable:eng+'index',mainPack:cur.pck,canvasResizePolicy:2,focusCanvas:true,ensureCrossOriginIsolationHeaders:false,args:[]});
-  e.startGame({onProgress:(c,t)=>st.textContent=t?`loading ${Math.round(100*c/t)}%`:'loading'})
-   .then(()=>{st.textContent=cur.id;document.getElementById('canvas').focus();},err=>st.textContent='error: '+err);};
- document.head.appendChild(s);
+<button class="play" data-id="${esc(b.id)}">Play</button></div>`).join(''):`<p class="none">No builds yet.</p>`);
+  document.getElementById('allgames').onclick=e=>{e.preventDefault();history.pushState(null,'',location.pathname);route();};
+  list.querySelectorAll('.play').forEach(btn=>btn.onclick=()=>{location.hash=btn.dataset.id;});};
+ const play=b=>{playing=true;document.title=`${b.title} (${b.id})`;
+  list.style.display='none';document.getElementById('game').style.display='block';
+  document.getElementById('back').onclick=()=>location.assign(location.pathname+'#'+encodeURIComponent(b.game)); // reload: engine can't restart in place
+  const st=document.getElementById('st');const eng=`engine/${b.engine}/`;
+  const s=document.createElement('script');s.src=eng+'index.js';
+  s.onload=()=>{const e=new Engine({executable:eng+'index',mainPack:b.pck,canvasResizePolicy:2,focusCanvas:true,ensureCrossOriginIsolationHeaders:false,args:[]});
+   e.startGame({onProgress:(c,t)=>st.textContent=t?`loading ${Math.round(100*c/t)}%`:'loading'})
+    .then(()=>{st.textContent=b.id;document.getElementById('canvas').focus();},err=>st.textContent='error: '+err);};
+  document.head.appendChild(s);};
+ let last=null; // hashchange and popstate can both fire for one navigation; act once per URL
+ const route=()=>{const h=decodeURIComponent(location.hash.slice(1)); if(h===last) return; last=h;
+  if(playing){location.reload();return;}
+  const b=h&&builds.find(x=>x.id===h); if(b) return play(b);
+  const x=h&&games.find(y=>y.slug===h); if(x){window.scrollTo(0,0);return gamePage(x);}
+  home();};
+ window.addEventListener('hashchange',route); window.addEventListener('popstate',route);
+ route();
 })();
 </script></body></html>
