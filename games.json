@@ -33,6 +33,14 @@
       "repo": "janxzs/Minecraft-Clone-Godot",
       "project": ".",
       "scene": "res://scenes/main.tscn"
+    },
+    {
+      "slug": "movement",
+      "name": "Movement",
+      "description": "Weighty first-person movement test course: walk, sprint, jump, crouch, momentum slide",
+      "repo": "janxzs/Movement-Godot",
+      "project": ".",
+      "scene": "res://scenes/test_course.tscn"
     }
   ]
 }
