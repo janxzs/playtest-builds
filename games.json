@@ -7,7 +7,8 @@
       "description": "A multiplayer day/night base-building survival game about a nanobot organism called the Zeigote.",
       "repo": "janxzs/Zeigote-Godot",
       "project": ".",
-      "scene": null
+      "scene": null,
+      "multiplayer": true
     },
     {
       "slug": "tower-defense",

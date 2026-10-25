@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-bbdb15b-2026-10-24",
+      "game": "zeigote",
+      "repo": "janxzs/Zeigote-Godot",
+      "pr": null,
+      "sha": "bbdb15b",
+      "ticket": "ZG-0022",
+      "datetime": "2026-10-24T21:55:51-07:00",
+      "date": "2026-10-24",
+      "engine": "4.7.2",
+      "pck": "builds/zeigote/main-bbdb15b-2026-10-24/zeigote.pck",
+      "title": "Zeigote online co-op for up to 4 players (ZG-0022)",
+      "summary": "Up to 4 players co-op on one team with a shared Nexus. Teammates show shield and attack poses, movement is predicted, and the HUD shows players n/4 and ping. While connecting it says 'If your browser asks, click Allow'. Players spawn 12 m in front of the Nexus, facing it. Without ?server= it's the same solo game. To join a server, put ?server=ws://127.0.0.1:9080 before the # in the URL, e.g. https://janxzs.github.io/playtest-builds/?server=ws%3A%2F%2F127.0.0.1%3A9080#main-bbdb15b-2026-10-24 (the server must be this same build).",
+      "controls": "Click to start and lock the mouse. Mouse look, WASD move, Space jump, left mouse attacks, hold right mouse to block, E harvest/deposit, N calls the next wave, Esc/P menu (online it doesn't pause the world), R restart (online: restarts the match for everyone), V top-down debug view. One PC, several players: one browser window each, side by side, not tabs.",
+      "test": "Solo: same loop as before. Co-op: does everyone connect (click Allow if the browser asks), see players n/4 and a ping, and see teammates with shield and attack poses? Does movement feel responsive? Do deposits, tier and waves stay shared? Does a 5th player get 'server full' and a different build get a version-mismatch message? Does R on game over restart the match for everyone?",
+      "status": "merged"
+    },
+    {
       "id": "main-56c4e01-2026-10-24",
       "game": "gears-clone",
       "repo": "janxzs/GearsClone-Godot",
