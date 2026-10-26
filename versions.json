@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-430907c-2026-10-26",
+      "game": "minecraft-clone",
+      "repo": "janxzs/Minecraft-Clone-Godot",
+      "pr": null,
+      "sha": "430907c",
+      "ticket": "VB-0023, VB-0024",
+      "datetime": "2026-10-26T00:56:47-07:00",
+      "date": "2026-10-26",
+      "engine": "4.7.2",
+      "pck": "builds/minecraft-clone/main-430907c-2026-10-26/minecraft-clone.pck",
+      "title": "Minecraft Clone: far beacons as an art kit option, slimmer on web (VB-0023, VB-0024)",
+      "summary": "The far base beacons that cut through the daytime haze are now an art kit option shared with Zeigote. The browser build uses a slimmer variant: beacons widen up to 3 times with distance instead of 6. Also includes a terrain-height precision fix in the shared art kit (VB-0024); the terrain should look the same.",
+      "controls": "No new controls. Click to capture the mouse. Mouse look, WASD move, Space jump, Shift sprint, F fly (Space up, Ctrl or C down). 1 Axe / 2 Pickaxe / 3 Sculpt / 4 Torch or the mouse wheel. O opens Settings (render distance, time of day); Esc releases the mouse and shows Settings.",
+      "test": "Fly high at 640 m in daylight: are the other bases’ beacons still easy to spot through the haze with the slimmer web beacons?",
+      "status": "merged"
+    },
+    {
       "id": "main-038ad78-2026-10-26",
       "game": "zeigote",
       "repo": "janxzs/Zeigote-Godot",
