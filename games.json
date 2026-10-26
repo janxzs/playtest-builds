@@ -37,7 +37,7 @@
     {
       "slug": "movement",
       "name": "Movement",
-      "description": "Weighty first-person movement test course: walk, sprint, jump, crouch, momentum slide",
+      "description": "Weighty first-person movement test course: walk, sprint, jump, crouch, momentum slide, and a grappling hook to swing between beams",
       "repo": "janxzs/Movement-Godot",
       "project": ".",
       "scene": "res://scenes/test_course.tscn"
