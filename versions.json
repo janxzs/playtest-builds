@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-277fe22-2026-10-25",
+      "game": "minecraft-clone",
+      "repo": "janxzs/Minecraft-Clone-Godot",
+      "pr": null,
+      "sha": "277fe22",
+      "ticket": "VB-0020, VB-0021",
+      "datetime": "2026-10-25T23:02:47-07:00",
+      "date": "2026-10-25",
+      "engine": "4.7.2",
+      "pck": "builds/minecraft-clone/main-277fe22-2026-10-25/minecraft-clone.pck",
+      "title": "Minecraft Clone: base ziggurats and shared art kit (VB-0020, VB-0021)",
+      "summary": "Each of the 6 bases now has a mudbrick ziggurat nexus 14 m in from the obelisk, with a glowing team-coloured crystal and a beacon you can see across the map. It is visual only for now, so you can walk through it. Terrain, props, water and sky now come from the shared ZgArt art kit and should look the same as before.",
+      "controls": "No new controls. Click to capture the mouse. Mouse look, WASD move, Space jump, Shift sprint, F fly (Space up, Ctrl or C down). 1 Axe / 2 Pickaxe / 3 Sculpt / 4 Torch or the mouse wheel. O opens Settings (render distance, time of day); Esc releases the mouse and shows Settings.",
+      "test": "Find your base ziggurat next to the obelisk: does it read as your base up close? Fly high at 640 m, by day and at night (Time of day in Settings): can you spot the beacons of the other bases? Does anything else (terrain, water, sky, trees) look different from the previous build?",
+      "status": "merged"
+    },
+    {
       "id": "main-eb7e16a-2026-10-25",
       "game": "zeigote",
       "repo": "janxzs/Zeigote-Godot",
