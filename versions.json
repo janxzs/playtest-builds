@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-2429d18-2026-10-25",
+      "game": "minecraft-clone",
+      "repo": "janxzs/Minecraft-Clone-Godot",
+      "pr": null,
+      "sha": "2429d18",
+      "ticket": "VB-0019",
+      "datetime": "2026-10-25T22:40:19-07:00",
+      "date": "2026-10-25",
+      "engine": "4.7.2",
+      "pck": "builds/minecraft-clone/main-2429d18-2026-10-25/minecraft-clone.pck",
+      "title": "Minecraft Clone: day/night cycle with torches (VB-0019)",
+      "summary": "A 12-minute day/night cycle with a sun and moon, a warm dusk, and a readable moonlit night with stars. Braziers mark each base and oasis. A new Torch (key 4) can be planted and picked back up, and the torch in your hand lights your way. Settings has a Time of day slider. The haze thins with altitude, and the holes and floating water seen from high up at long render distance are fixed. The web build uses a lighter look (at most 6 lights at once).",
+      "controls": "Click to capture the mouse (that click doesn’t swing). Mouse look, WASD move, Space jump, Shift sprint, F fly (Space up, Ctrl or C down). 1 Axe / 2 Pickaxe / 3 Sculpt / 4 Torch or the mouse wheel. Torch: left mouse plants one where you aim, right mouse picks up the nearest. O opens Settings (render distance and time of day); Esc releases the mouse and shows Settings.",
+      "test": "Drag Time of day in Settings (O) to dusk and night: is the night dark but readable? Do the braziers stand out as landmarks? Plant torches (4, left mouse), pick one back up, and walk into a cave holding a torch. At 640 m, fly high: any holes or floating water? On web, does it show when lights switch on and off (6 at most)?",
+      "status": "merged"
+    },
+    {
       "id": "main-263c6f5-2026-10-25",
       "game": "minecraft-clone",
       "repo": "janxzs/Minecraft-Clone-Godot",
