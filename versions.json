@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-bd57d39-2026-10-25",
+      "game": "gears-clone",
+      "repo": "janxzs/GearsClone-Godot",
+      "pr": null,
+      "sha": "bd57d39",
+      "ticket": "sword combo, slingshot draw, bow repose",
+      "datetime": "2026-10-25T20:31:18-07:00",
+      "date": "2026-10-25",
+      "engine": "4.7.2",
+      "pck": "builds/gears-clone/main-bd57d39-2026-10-25/gears-clone.pck",
+      "title": "Gears Clone: sword combo, slingshot draw, bow out of the way",
+      "summary": "The sword has a three-swing combo: slash right to left, slash back left to right, then a long stab. The slingshot pulls back before each shot (hold to draw, a quick tap lobs a weak pebble). The bow sits low on the left, clear of the crosshair. Clicking while a weapon isn't ready shows a RELOADING or LOADING note, and in the browser the hint says Esc only frees the mouse.",
+      "controls": "Click to capture the mouse (that click doesn't fire). Mouse look, WASD move, Shift sprint. Right mouse aims down sights (in cover: pops up). Left mouse: rifle hold to fire; sword click for the next combo swing (click again within about half a second, or hold, to chain); slingshot hold to draw, release to shoot; bow hold to draw, release to shoot. 1-4 or the wheel switches weapon, R reloads, C or Ctrl crouches, E takes or leaves cover, A/D slide along cover. Esc frees the mouse.",
+      "test": "Sword: do all three swings hit the practice dummy (behind you on the left), and does the rhythm feel right? Slingshot: does the meter fill while you hold, and does a quick tap lob a weak pebble? Is the bow out of the way of the crosshair, idle and drawing? Click during a reload: do you see the orange note?",
+      "status": "merged"
+    },
+    {
       "id": "main-f829bb2-2026-10-25",
       "game": "movement",
       "repo": "janxzs/Movement-Godot",
