@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-f829bb2-2026-10-25",
+      "game": "movement",
+      "repo": "janxzs/Movement-Godot",
+      "pr": null,
+      "sha": "f829bb2",
+      "ticket": "MV-0003, MV-0004",
+      "datetime": "2026-10-25T20:26:32-07:00",
+      "date": "2026-10-25",
+      "engine": "4.7.2",
+      "pck": "builds/movement/main-f829bb2-2026-10-25/movement.pck",
+      "title": "Movement: lighter feel, walled course and grappling hook (MV-0003, MV-0004)",
+      "summary": "Lighter feel: walk 4.3 and sprint 7.0 m/s, a 1.3 m jump and a bit more air control. The course now has border walls, rails on the slide-slope tops, and you respawn if you fall below it. Mouse look is fixed for high-DPI screens. New grappling hook: a grapple park about 50 m east of the start with pillars and beams, an overhang over a gap and a grapple-only tower. The crosshair ring turns green when a target is in range.",
+      "controls": "Click to start (captures the mouse). Mouse look, WASD move, Shift sprint, Space jump, hold C to crouch (sprint + C slides). Right mouse or Q fires and releases the grapple, hold E reels in, hold X reels out, Space releases. R respawns at the start, F1 shows or hides the debug HUD. Esc frees the mouse and pauses; click to resume.",
+      "test": "Does it feel lighter but still grounded? Do the walls stop you at the edge? At the grapple park (east), does the ring turn green on a beam, and can you swing from beam to beam, reel up to the grapple-only tower and land on top? Does the swing feel weighty but fun?",
+      "status": "merged"
+    },
+    {
       "id": "main-2dc7e23-2026-10-25",
       "game": "movement",
       "repo": "janxzs/Movement-Godot",
