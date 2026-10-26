@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-038ad78-2026-10-26",
+      "game": "zeigote",
+      "repo": "janxzs/Zeigote-Godot",
+      "pr": null,
+      "sha": "038ad78",
+      "ticket": "ZG-0027",
+      "datetime": "2026-10-26T00:03:51-07:00",
+      "date": "2026-10-26",
+      "engine": "4.7.2",
+      "pck": "builds/zeigote/main-038ad78-2026-10-26/zeigote.pck",
+      "title": "Zeigote: DOWNED screen frees the mouse, first co-op connect works (ZG-0027)",
+      "summary": "Two fixes on top of the desert ring build. On the DOWNED (game over) screen the mouse is now free, so Restart and Leave to menu can be clicked, and Esc opens the menu from there. Joining co-op on a freshly opened page now connects on the first attempt instead of failing once while the game is still loading. Co-op needs this build’s server (zeigote-server zip from the Zeigote-Godot release); servers from other builds are refused (net protocol 5).",
+      "controls": "No new controls. Menu: Play Solo, Join Co-op, Host Co-op (desktop). In game: click to lock the mouse, mouse look, WASD move, Space jump, left mouse attacks, hold right mouse to block, E harvest/deposit at the Nexus, N next wave, Esc menu (Leave to menu), V top-down view. On the DOWNED screen: click Restart or Leave to menu, or press Esc for the menu. Server flags: --seed N, --time-of-day T (0..1), --day-length S (0 freezes the sky).",
+      "test": "Let the Zeigote take the Nexus (or get downed): can you click Restart and Leave to menu straight away, and does Esc open the menu? In co-op, open a fresh page and Join: does it connect on the first try?",
+      "status": "merged"
+    },
+    {
       "id": "main-77cbae0-2026-10-25",
       "game": "minecraft-clone",
       "repo": "janxzs/Minecraft-Clone-Godot",
