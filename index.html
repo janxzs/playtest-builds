@@ -94,8 +94,9 @@ a{color:#8ab4ff}.nav{display:inline-block;margin:0 0 12px;text-decoration:none}.
   const st=document.getElementById('st');const eng=`engine/${b.engine}/`;
   const s=document.createElement('script');s.src=eng+'index.js';
   s.onload=()=>{const e=new Engine({executable:eng+'index',mainPack:b.pck,canvasResizePolicy:2,focusCanvas:true,ensureCrossOriginIsolationHeaders:false,args:[]});
-   e.startGame({onProgress:(c,t)=>st.textContent=t?`loading ${Math.round(100*c/t)}%`:'loading'})
-    .then(()=>{st.textContent=b.id+(urlServer?' · server '+urlServer.replace(/^wss?:\/\//,''):'');document.getElementById('canvas').focus();},err=>st.textContent='error: '+err);};
+   let started=false; // a late onProgress call must not overwrite the build id once the game runs
+   e.startGame({onProgress:(c,t)=>{if(!started) st.textContent=t?`loading ${Math.round(100*c/t)}%`:'loading';}})
+    .then(()=>{started=true;st.textContent=b.id+(urlServer?' · server '+urlServer.replace(/^wss?:\/\//,''):'');document.getElementById('canvas').focus();},err=>st.textContent='error: '+err);};
   document.head.appendChild(s);};
  let last=null; // hashchange and popstate can both fire for one navigation; act once per URL
  const route=()=>{const h=decodeURIComponent(location.hash.slice(1)); if(h===last) return; last=h;
