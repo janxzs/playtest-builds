@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-77cbae0-2026-10-25",
+      "game": "minecraft-clone",
+      "repo": "janxzs/Minecraft-Clone-Godot",
+      "pr": null,
+      "sha": "77cbae0",
+      "ticket": "VB-0022",
+      "datetime": "2026-10-25T23:51:45-07:00",
+      "date": "2026-10-25",
+      "engine": "4.7.2",
+      "pck": "builds/minecraft-clone/main-77cbae0-2026-10-25/minecraft-clone.pck",
+      "title": "Minecraft Clone: clear spawn, visible beacons, sky phase names (VB-0022)",
+      "summary": "You now start on the open base pad facing the nexus and the oasis, instead of up against the ziggurat. The far base beacons cut through the daytime haze and get wider with distance, so you can spot other bases from the air. The Time of day slider names the sky phase (for example twilight). Also includes the art kit fixes shared with Zeigote.",
+      "controls": "No new controls. Click to capture the mouse. Mouse look, WASD move, Space jump, Shift sprint, F fly (Space up, Ctrl or C down). 1 Axe / 2 Pickaxe / 3 Sculpt / 4 Torch or the mouse wheel. O opens Settings (render distance, time of day); Esc releases the mouse and shows Settings.",
+      "test": "At the start, are you on open ground facing the nexus and oasis? Fly high at 640 m in daylight: can you spot the other bases’ beacons through the haze? Drag Time of day: does the label name the phase (dawn, day, twilight, night)?",
+      "status": "merged"
+    },
+    {
       "id": "main-af22253-2026-10-25",
       "game": "zeigote",
       "repo": "janxzs/Zeigote-Godot",
