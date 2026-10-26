@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-eb7e16a-2026-10-25",
+      "game": "zeigote",
+      "repo": "janxzs/Zeigote-Godot",
+      "pr": null,
+      "sha": "eb7e16a",
+      "ticket": "ZG-0023",
+      "datetime": "2026-10-25T23:02:25-07:00",
+      "date": "2026-10-25",
+      "engine": "4.7.2",
+      "pck": "builds/zeigote/main-eb7e16a-2026-10-25/zeigote.pck",
+      "title": "Zeigote main menu: Play Solo, Host and Join Co-op (ZG-0023)",
+      "summary": "The game now opens on a main menu with Play Solo, Host Co-op (desktop only) and Join Co-op. Join takes a ws:// or wss:// address, a pasted https tunnel link, or host:port for ENet on desktop. It shows connecting, refused and failed states and lets you retry. Esc in the game offers Leave to menu (the host gets Stop hosting), so you can switch sessions without reloading. Links with ?server= still join automatically. Co-op needs this build’s server (zeigote-server zip from the Zeigote-Godot release); older servers are refused (net protocol 4).",
+      "controls": "Menu: click Play Solo, Join Co-op or Host Co-op (desktop). In Join: type or paste the address, Enter joins, R retries, Esc goes back. In game: click to lock the mouse, mouse look, WASD move, Space jump, left mouse attacks, hold right mouse to block, E harvest/deposit, N next wave, Esc menu (Leave to menu / Stop hosting), V top-down view.",
+      "test": "Does the menu show, and does Play Solo start the game? Join Co-op with the server address: does it connect, and do you see the other players? Try a wrong address: does it say it failed, and does R retry? Leave to menu and join again without reloading. On desktop: Host Co-op and have a browser or second window join.",
+      "status": "merged"
+    },
+    {
       "id": "main-2429d18-2026-10-25",
       "game": "minecraft-clone",
       "repo": "janxzs/Minecraft-Clone-Godot",
