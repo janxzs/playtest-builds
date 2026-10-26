@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-263c6f5-2026-10-25",
+      "game": "minecraft-clone",
+      "repo": "janxzs/Minecraft-Clone-Godot",
+      "pr": null,
+      "sha": "263c6f5",
+      "ticket": "VB-0018",
+      "datetime": "2026-10-25T21:39:22-07:00",
+      "date": "2026-10-25",
+      "engine": "4.7.2",
+      "pck": "builds/minecraft-clone/main-263c6f5-2026-10-25/minecraft-clone.pck",
+      "title": "Minecraft Clone: long-flight fixes and faster far hills (VB-0018)",
+      "summary": "Fixes for the browser crash after flying: terrain pieces are reused, so long flights are smoother and use less memory. At high render distance the far hills appear within a few seconds as a simplified pass, then sharpen nearest-first. Settings no longer opens over 'Click to play' on first load, the BENCH_MC console lines are gone, keys work on unusual keyboards, and a late mouse lock is handled.",
+      "controls": "Click to capture the mouse (that click doesn't swing). Mouse look, WASD move, Space jump, Shift sprint, F fly (Space up, Ctrl or C down). 1 Axe / 2 Pickaxe / 3 Sculpt or the mouse wheel. Hold left mouse to chop, break or dig; hold right mouse to raise ground (Sculpt). O opens Settings; Esc releases the mouse and shows Settings.",
+      "test": "Fly for a long time (F, then hold Shift), especially at 640 m render distance: does the browser still crash? If it does, note the browser, roughly how long you flew and what happened. At 640 m, do the boundary hills all round appear within a few seconds? On first load, is only 'Click to play' showing?",
+      "status": "merged"
+    },
+    {
       "id": "main-bd57d39-2026-10-25",
       "game": "gears-clone",
       "repo": "janxzs/GearsClone-Godot",
