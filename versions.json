@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-af22253-2026-10-25",
+      "game": "zeigote",
+      "repo": "janxzs/Zeigote-Godot",
+      "pr": null,
+      "sha": "af22253",
+      "ticket": "ZG-0026",
+      "datetime": "2026-10-25T23:35:29-07:00",
+      "date": "2026-10-25",
+      "engine": "4.7.2",
+      "pck": "builds/zeigote/main-af22253-2026-10-25/zeigote.pck",
+      "title": "Zeigote in the desert ring: art kit world and day/night sky (ZG-0026)",
+      "summary": "The game is now set in a desert ring of dunes, oases and boundary hills under a 10-minute day/night sky (visual only). Each team base sits on a flat sand pad, and the Nexus is a brick block with a glowing crystal, a light beam and braziers. In co-op the server picks the world seed, so everyone gets the same terrain. Players, Zeigote and pickups are still greybox. The browser uses a lighter look (224 m view, colours a little brighter than desktop). Co-op needs this build’s server (zeigote-server zip from the Zeigote-Godot release); older servers are refused (net protocol 5).",
+      "controls": "No new controls. Menu: Play Solo, Join Co-op, Host Co-op (desktop). In game: click to lock the mouse, mouse look, WASD move, Space jump, left mouse attacks, hold right mouse to block, E harvest/deposit at the Nexus, N next wave, Esc menu (Leave to menu), V top-down view. Server flags: --seed N, --time-of-day T (0..1), --day-length S (0 freezes the sky).",
+      "test": "Does the desert ring look right: dunes, oases, hills at the edge, the brick Nexus with its crystal, beam and braziers? Watch the sky change over a few minutes. In co-op, do all players see the same terrain? Is anything hard to see at night?",
+      "status": "merged"
+    },
+    {
       "id": "main-277fe22-2026-10-25",
       "game": "minecraft-clone",
       "repo": "janxzs/Minecraft-Clone-Godot",
