@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-8a8d33c-2026-10-26",
+      "game": "zeigote",
+      "repo": "janxzs/Zeigote-Godot",
+      "pr": null,
+      "sha": "8a8d33c",
+      "ticket": "ZG-0028, ZG-0029, ZG-0030",
+      "datetime": "2026-10-26T01:19:18-07:00",
+      "date": "2026-10-26",
+      "engine": "4.7.2",
+      "pck": "builds/zeigote/main-8a8d33c-2026-10-26/zeigote.pck",
+      "title": "Zeigote: slow co-op clients stay connected, DOWNED over Click to play, Nexus label clear of the HUD (ZG-0028-0030)",
+      "summary": "Co-op players on a slow computer (or several browser windows on one PC) no longer get dropped right after joining while the world builds, and a page that is still loading connects on the first try. If you are killed before clicking ‘Click to play’, the DOWNED screen now shows. The Nexus label no longer hides behind the info panel in small windows. Also art kit fixes shared with Minecraft Clone (ZG-0028) and an optional far Nexus beacon in the kit, off in Zeigote for now (ZG-0029). Co-op needs this build’s server (zeigote-server zip from the Zeigote-Godot release); servers from other builds are refused (net protocol 5).",
+      "controls": "No new controls. Menu: Play Solo, Join Co-op, Host Co-op (desktop). In game: click to lock the mouse, mouse look, WASD move, Space jump, left mouse attacks, hold right mouse to block, E harvest/deposit at the Nexus, N next wave, Esc menu (Leave to menu), V top-down view. On the DOWNED screen: click Restart or Leave to menu, or press Esc for the menu. Server flags: --seed N, --time-of-day T (0..1), --day-length S (0 freezes the sky).",
+      "test": "Play co-op with two or more players (or two browser windows on one PC): does everyone stay connected for the whole session? Does a friend joining while their page is still loading get in first time? Is the Nexus label readable in a small window?",
+      "status": "merged"
+    },
+    {
       "id": "main-430907c-2026-10-26",
       "game": "minecraft-clone",
       "repo": "janxzs/Minecraft-Clone-Godot",
