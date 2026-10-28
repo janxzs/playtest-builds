@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-a0f2d9d-2026-10-28",
+      "game": "minecraft-clone",
+      "repo": "janxzs/Minecraft-Clone-Godot",
+      "pr": null,
+      "sha": "a0f2d9d",
+      "ticket": "VB-0027",
+      "datetime": "2026-10-28T02:13:40-07:00",
+      "date": "2026-10-28",
+      "engine": "4.7.2",
+      "pck": "builds/minecraft-clone/main-a0f2d9d-2026-10-28/minecraft-clone.pck",
+      "title": "Minecraft Clone: no more stall at the nexus core corner (VB-0027)",
+      "summary": "Fixes the stall when you walk at the nexus core's end corner (about 40-45 degrees toward the wall) from the ground in front of a ramp. If you are pinned against a corner or wall for 1.5 s you now slide off along it (expect a pause of about 1.4 s), and a second breaker frees you from creases where two surfaces meet. The nexus geometry is unchanged. The web build also exposes window.mcState (position, velocity, on_floor, on_wall, yaw and more, about 5 times a second) for testing.",
+      "controls": "No new controls. Click to capture the mouse. Mouse look, WASD move, Space jump, Shift sprint, F fly. 1 Axe / 2 Pickaxe / 3 Sculpt / 4 Torch. O opens Settings (render distance, time of day); Esc releases the mouse.",
+      "test": "From the ground in front of a nexus ramp, aim at the core's end corner (try turning 5 degrees at a time, 10 to 60 degrees toward the wall) and hold W: at about 40-45 degrees you may pause for about 1.4 s, then you should slide round the corner and never be held for good. Same while climbing, hugging the side wall up to the platform. Walking straight into a wall or the crystal still stops you.",
+      "status": "merged"
+    },
+    {
       "id": "main-a3ecbdb-2026-10-27",
       "game": "minecraft-clone",
       "repo": "janxzs/Minecraft-Clone-Godot",
