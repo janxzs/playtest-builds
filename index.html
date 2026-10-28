@@ -13,8 +13,9 @@ a{color:#8ab4ff}.nav{display:inline-block;margin:0 0 12px;text-decoration:none}.
 .play:hover{background:#2563eb}.latest{font-size:12px;background:#264;color:#cfe;border-radius:6px;padding:1px 6px;margin-left:6px}.branch{font-size:12px;background:#542;color:#fdb;border-radius:6px;padding:1px 6px;margin-left:6px}
 .new{font-size:12px;background:#f59e0b;color:#1a1200;font-weight:700;border-radius:6px;padding:1px 7px;margin-left:8px;vertical-align:2px}.newtag{font-size:12px;color:#fbbf24;font-weight:600;margin-left:6px}.newtag:before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;background:#f59e0b;margin-right:4px;vertical-align:1px}
 #game{display:none;height:100%}#game canvas{display:block;width:100%;height:100%}
-#bar{position:fixed;left:6px;bottom:6px;z-index:2;padding:3px 6px;background:#0008;border-radius:6px;display:flex;gap:6px;align-items:center;font-size:11px;opacity:.45;transition:opacity .15s;pointer-events:auto}
-#bar:hover{opacity:1}
+#bar{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:2;display:flex;gap:6px;align-items:center;font-size:11px;background:#000a;color:#ddd;border-radius:8px 0 0 8px;padding:0;height:34px;max-width:14px;overflow:hidden;white-space:nowrap;opacity:.5;transition:max-width .18s,padding .18s,opacity .15s;pointer-events:auto;cursor:default}
+#bar::before{content:"\2039";flex:none;width:14px;text-align:center;font-size:16px;line-height:34px}
+#bar:hover,#bar:focus-within,#bar.open{max-width:360px;padding:0 6px 0 0;opacity:1}
 #bar button{font:inherit;cursor:pointer;padding:1px 6px}
 .srv{background:#1c1c1c;border:1px solid #333;border-radius:12px;padding:12px 16px;margin:0 0 12px}
 .srv input{width:min(520px,100%);box-sizing:border-box;background:#111;color:#eee;border:1px solid #444;border-radius:8px;padding:7px 10px;font:inherit}
@@ -95,8 +96,9 @@ a{color:#8ab4ff}.nav{display:inline-block;margin:0 0 12px;text-decoration:none}.
   const s=document.createElement('script');s.src=eng+'index.js';
   s.onload=()=>{const e=new Engine({executable:eng+'index',mainPack:b.pck,canvasResizePolicy:2,focusCanvas:true,ensureCrossOriginIsolationHeaders:false,args:[]});
    let started=false; // a late onProgress call must not overwrite the build id once the game runs
+   const bar=document.getElementById('bar');bar.classList.add('open'); // show the loading text, then collapse to the edge chip
    e.startGame({onProgress:(c,t)=>{if(!started) st.textContent=t?`loading ${Math.round(100*c/t)}%`:'loading';}})
-    .then(()=>{started=true;st.textContent=b.id+(urlServer?' · server '+urlServer.replace(/^wss?:\/\//,''):'');document.getElementById('canvas').focus();},err=>st.textContent='error: '+err);};
+    .then(()=>{started=true;st.textContent=b.id+(urlServer?' · server '+urlServer.replace(/^wss?:\/\//,''):'');setTimeout(()=>bar.classList.remove('open'),2500);document.getElementById('canvas').focus();},err=>st.textContent='error: '+err);};
   document.head.appendChild(s);};
  let last=null; // hashchange and popstate can both fire for one navigation; act once per URL
  const route=()=>{const h=decodeURIComponent(location.hash.slice(1)); if(h===last) return; last=h;
