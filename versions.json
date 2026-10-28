@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-a3ecbdb-2026-10-27",
+      "game": "minecraft-clone",
+      "repo": "janxzs/Minecraft-Clone-Godot",
+      "pr": null,
+      "sha": "a3ecbdb",
+      "ticket": "VB-0026",
+      "datetime": "2026-10-27T23:04:57-07:00",
+      "date": "2026-10-27",
+      "engine": "4.7.2",
+      "pck": "builds/minecraft-clone/main-a3ecbdb-2026-10-27/minecraft-clone.pck",
+      "title": "Minecraft Clone: no more stall at the ramp foot (VB-0026)",
+      "summary": "Fixes the nexus ramp stall: pressing W at the foot of a ramp while turned a little toward the wall or the low edge no longer leaves you standing still. You now slide along and climb on (the player's floor_block_on_wall is off). The crystal stops you the same distance (about 1.25 m) from its centre on every ramp.",
+      "controls": "No new controls. Click to capture the mouse. Mouse look, WASD move, Space jump, Shift sprint, F fly. 1 Axe / 2 Pickaxe / 3 Sculpt / 4 Torch. O opens Settings (render distance, time of day); Esc releases the mouse.",
+      "test": "Stand at the foot of a nexus ramp inside the channel, facing up but turned a little toward the wall or the edge, and hold W: do you slide along and climb on, never standing still? Try the toe, half way up and just below the top. Walking straight into the core wall should still stop you. Walk into the crystal from the platform: does it stop you at the same distance on every side of every nexus?",
+      "status": "merged"
+    },
+    {
       "id": "main-659418f-2026-10-27",
       "game": "gears-clone",
       "repo": "janxzs/GearsClone-Godot",
