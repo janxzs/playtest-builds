@@ -120,6 +120,24 @@
       "status": "merged"
     },
     {
+      "id": "pivot-fps-nexus-4edbe8a-2026-10-25",
+      "game": "tower-defense",
+      "repo": "janxzs/Tower-Defense-Clone-Godot",
+      "pr": null,
+      "sha": "4edbe8a",
+      "ticket": null,
+      "branch": "pivot/fps-nexus",
+      "datetime": "2026-10-25T22:47:34-07:00",
+      "date": "2026-10-25",
+      "engine": "4.7.2",
+      "pck": "builds/tower-defense/pivot-fps-nexus-4edbe8a-2026-10-25/tower-defense.pck",
+      "title": "Tower Defense: first-person nexus, Valheim/Rust-style snap building (branch preview)",
+      "summary": "Branch preview of the GDD v0.4 pivot (branch pivot/fps-nexus, not merged). First-person tower defense: defend a central nexus by building a maze. Building now works like Valheim and Rust: you hold a hammer, pieces snap onto the ground, on top of each other or beside each other, and the ghost turns green or red with a reason. Stability drops with each level and pieces are tinted blue, green, yellow or red in build mode. Walls stack at most 3 high, and removing a support collapses what it held, with a refund. You start on the nexus platform, which has ramps on its north and south sides.",
+      "controls": "Click to capture the mouse. WASD move, Shift sprint, Space jump, hold left mouse to shoot. B or Q toggles the hammer (build mode). 1-7 or the mouse wheel picks a piece: wall, long wall, gun tower, frost tower, foundation, floor, stairs. Left click places, R rotates, X or right click removes. N or Enter starts a wave. V overhead view, F4 flow arrows, F3 stats. Esc or P pauses, R restarts after the game ends.",
+      "test": "Stack walls: three are allowed and a fourth is refused with 'Too high'. Does a tower fit on top of a stack? Remove a lower wall: do the pieces above collapse and refund? Can you walk up player-built stairs and the nexus ramps? Is a build that would seal off the nexus refused? Does Start and Resume still capture the mouse?",
+      "status": "branch preview"
+    },
+    {
       "id": "main-2429d18-2026-10-25",
       "game": "minecraft-clone",
       "repo": "janxzs/Minecraft-Clone-Godot",
