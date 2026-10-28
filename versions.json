@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-0143753-2026-10-27",
+      "game": "minecraft-clone",
+      "repo": "janxzs/Minecraft-Clone-Godot",
+      "pr": null,
+      "sha": "0143753",
+      "ticket": "VB-0025",
+      "datetime": "2026-10-27T21:22:50-07:00",
+      "date": "2026-10-27",
+      "engine": "4.7.2",
+      "pck": "builds/minecraft-clone/main-0143753-2026-10-27/minecraft-clone.pck",
+      "title": "Minecraft Clone: solid, walkable nexus ziggurats (VB-0025)",
+      "summary": "The nexus ziggurats are solid now, with a walkable 2 m wide ramp up to the 5 m platform. You can walk or sprint up a ramp, walk round the crystal (it blocks you), step off the edge, and the side walls stop you. Trees and rocks no longer spawn inside or at the foot of a nexus. Fixes falling through the structure on the previous build.",
+      "controls": "No new controls. Click to capture the mouse. Mouse look, WASD move, Space jump, Shift sprint, F fly (Space up, Ctrl or C down). 1 Axe / 2 Pickaxe / 3 Sculpt / 4 Torch or the mouse wheel. O opens Settings (render distance, time of day); Esc releases the mouse and shows Settings.",
+      "test": "Walk and sprint up a nexus ramp onto the platform, then round the crystal: do you ever fall through or snag at the bottom or top? Walk back down: any hops? Do the side walls stop you? Are there any trees or rocks at the ramp feet?",
+      "status": "merged"
+    },
+    {
       "id": "main-8a8d33c-2026-10-26",
       "game": "zeigote",
       "repo": "janxzs/Zeigote-Godot",
