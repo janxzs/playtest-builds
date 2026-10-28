@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-659418f-2026-10-27",
+      "game": "gears-clone",
+      "repo": "janxzs/GearsClone-Godot",
+      "pr": null,
+      "sha": "659418f",
+      "ticket": "alien quadruped restyle",
+      "datetime": "2026-10-27T22:39:35-07:00",
+      "date": "2026-10-27",
+      "engine": "4.7.2",
+      "pck": "builds/gears-clone/main-659418f-2026-10-27/gears-clone.pck",
+      "title": "Gears Clone: alien chitin hounds, click-to-start gate, ammo refills",
+      "summary": "The hounds are restyled as alien chitin quadrupeds: a smooth head with glowing green eyes, twitching hooked mandibles that flare when they notice you, segmented shell plates with back spikes, thin jointed insect legs with claws and a swaying tail. They flash magenta before a lunge and curl up when they die. Nothing runs until your first click: a CLICK TO START banner shows and no AI or waves start while you wait. You respawn with every weapon full, and a wave clear refills your ammo.",
+      "controls": "Click once to start (the first click starts the waves and captures the mouse). Mouse look, WASD move, Shift sprint, right mouse aims. Left mouse fires the current weapon. 1-4 or the wheel switches weapon, R reloads, C or Ctrl crouches, E takes or leaves cover. N or Enter calls the next wave now. Esc frees the mouse.",
+      "test": "Wait about 20 s before clicking: do the hounds stay still while the CLICK TO START banner shows? After the click, do they read as alien (eyes, mandibles, spiked shell, jointed legs, tail), walk, flash magenta before a lunge, and curl up on death? Empty the rifle and die: are you back at full ammo? Does a wave clear refill ammo? Balance is best judged on desktop.",
+      "status": "merged"
+    },
+    {
       "id": "main-0d4bd3d-2026-10-27",
       "game": "movement",
       "repo": "janxzs/Movement-Godot",
