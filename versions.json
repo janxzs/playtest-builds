@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-e809914-2026-10-28",
+      "game": "zeigote",
+      "repo": "janxzs/Zeigote-Godot",
+      "pr": null,
+      "sha": "e809914",
+      "ticket": "ZG-0033, ZG-0031",
+      "datetime": "2026-10-28T21:30:07-07:00",
+      "date": "2026-10-28",
+      "engine": "4.7.2",
+      "pck": "builds/zeigote/main-e809914-2026-10-28/zeigote.pck",
+      "title": "Zeigote: server day/night cycle with DAY and NIGHT phases (ZG-0033). New server zip needed (net protocol 6)",
+      "summary": "The first step of day/night survival (M4 phase A). The server now runs a day/night clock with DAY and NIGHT phases and day numbers, the HUD shows the phase and a countdown to the next one, and the sky follows the phase (dark with stars at night); in co-op everyone sees the same phase at the same time. Also in this build, opt-in collision for the shared art kit (ZG-0031), which is off in Zeigote. NEEDS THE NEW SERVER ZIP: the net protocol went from 5 to 6, so a server from an older build refuses this client and this build refuses older servers. Download the server zip from the Zeigote-Godot release playtest/main-e809914-2026-10-28 (Windows, includes the friends link script). Solo play needs nothing.",
+      "controls": "No new controls. Menu: Play Solo, Join Co-op, Host Co-op (desktop). In game: click to lock the mouse, mouse look, WASD move, Space jump, left mouse attacks, hold right mouse to block, E harvest or deposit, N next wave, Esc menu (Leave to menu), V top-down view. Server flags (after --): --seed N, --day-length S (whole cycle, split 60/40; 0 freezes it), --day-s N / --night-s N (phase lengths in seconds), --debug-cycle (a short 24 s + 16 s cycle).",
+      "test": "Watch the HUD: does it show DAY or NIGHT with the day number and a countdown to the next phase? Does the sky change when the phase changes (night is dark with stars)? In co-op with two browser windows, do both flip phase at the same time? Remember to use the new server zip: an older server shows a protocol mismatch message.",
+      "status": "merged"
+    },
+    {
       "id": "main-08a2b84-2026-10-28",
       "game": "movement",
       "repo": "janxzs/Movement-Godot",
