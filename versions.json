@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-0f682e4-2026-10-28",
+      "game": "minecraft-clone",
+      "repo": "janxzs/Minecraft-Clone-Godot",
+      "pr": null,
+      "sha": "0f682e4",
+      "ticket": "VB-0028",
+      "datetime": "2026-10-28T20:45:26-07:00",
+      "date": "2026-10-28",
+      "engine": "4.7.2",
+      "pck": "builds/minecraft-clone/main-0f682e4-2026-10-28/minecraft-clone.pck",
+      "title": "Minecraft Clone: player audio (VB-0028)",
+      "summary": "Sound for the first time. Footsteps depend on the ground (sand, grass, mud, rock, mudbrick ramps, water) and are faster when you sprint; there are jump and landing sounds, with a heavy thud after a fall of about 3 m or more; the axe, pickaxe and tree-fell and rock-break sounds, plus a pickup tick; a quiet desert wind all the time and a water bed near oases. Settings (O) has new Master volume and Sound effects sliders. In the browser sound starts after your first click or key. The web build also reports sound events in window.mcState (sfx_count, last_sfx, step_surface and more).",
+      "controls": "No new controls. Click to capture the mouse. Mouse look, WASD move, Space jump, Shift sprint, F fly. 1 Axe / 2 Pickaxe / 3 Sculpt / 4 Torch. O opens Settings (render distance, time of day, Master volume, Sound effects); Esc releases the mouse.",
+      "test": "With sound on: walk and sprint on sand (crunchy steps, faster when sprinting, none when standing still, flying or pushing into a wall), then grass and mud at the oasis shore, wading into the water, a rock in the foothills, and up a ziggurat ramp (dull mudbrick knock). Jump, then drop off a ziggurat or hill: is the landing heavier the further you fall? Chop a palm with the axe (1) and break a rock with the pickaxe (2): hit sounds, then the finishing sound and the pickup tick. Is the desert wind pleasant and the oasis water audible? Open Settings (O): do the volume sliders work and stay after a reload? Tell us which sound is too loud, quiet, sharp or repetitive.",
+      "status": "merged"
+    },
+    {
       "id": "main-cbfb809-2026-10-28",
       "game": "gears-clone",
       "repo": "janxzs/GearsClone-Godot",
