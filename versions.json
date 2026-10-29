@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-a97d5b1-2026-10-28",
+      "game": "zeigote",
+      "repo": "janxzs/Zeigote-Godot",
+      "pr": null,
+      "sha": "a97d5b1",
+      "ticket": "ZG-0034",
+      "datetime": "2026-10-28T22:44:54-07:00",
+      "date": "2026-10-28",
+      "engine": "4.7.2",
+      "pck": "builds/zeigote/main-a97d5b1-2026-10-28/zeigote.pck",
+      "title": "Zeigote: night waves of alien enemies attack the Nexus (ZG-0034). New server zip needed (net protocol 7)",
+      "summary": "NEEDS THE NEW SERVER ZIP: the net protocol went from 6 to 7, so a server from an older build refuses this client and this build refuses older servers. Download the server zip from the Zeigote-Godot release playtest/main-a97d5b1-2026-10-28 (Windows, includes the friends link script). Solo play needs nothing. What changed (M4 phase B): at night, waves of Gears-style alien enemies spawn around each team's Nexus and walk to it and attack it; by day there are none. Left click attacks, right click blocks. Wave size grows with the night number and the number of players. At dawn leftovers dissolve and the Nexus repairs some health. If a team's Nexus is destroyed you get a NEXUS DESTROYED screen with a restart. The server clock from the last build (DAY and NIGHT) drives the waves.",
+      "controls": "Menu: Play Solo, Join Co-op, Host Co-op (desktop). In game: click to lock the mouse, mouse look, WASD move, Space jump, LEFT MOUSE ATTACKS, hold RIGHT MOUSE TO BLOCK, E harvest or deposit, N calls a raid now (debug, day or night), Esc menu (Leave to menu), V top-down view. Server flags (after --): --day-s N / --night-s N (phase lengths in seconds), --debug-cycle (short 24 s + 16 s cycle), --day-length S, --seed N.",
+      "test": "Wait for night (HUD shows NIGHT and a 'Night n: m Zeigote left' line). Do the aliens appear around the Nexus and walk to it? Does left click kill them, and does holding right click cut the damage you take? Do they damage the Nexus, and does it repair a little at dawn? Let the Nexus die: does the NEXUS DESTROYED screen come up and does restart work? Try co-op with two windows. Remember to use the new server zip: an older server shows a protocol mismatch message.",
+      "status": "merged"
+    },
+    {
       "id": "main-e809914-2026-10-28",
       "game": "zeigote",
       "repo": "janxzs/Zeigote-Godot",
