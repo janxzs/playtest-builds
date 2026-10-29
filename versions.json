@@ -1,6 +1,24 @@
 {
   "builds": [
     {
+      "id": "main-cbfb809-2026-10-28",
+      "game": "gears-clone",
+      "repo": "janxzs/GearsClone-Godot",
+      "pr": null,
+      "sha": "cbfb809",
+      "ticket": null,
+      "datetime": "2026-10-28T20:41:19-07:00",
+      "date": "2026-10-28",
+      "engine": "4.7.2",
+      "pck": "builds/gears-clone/main-cbfb809-2026-10-28/gears-clone.pck",
+      "title": "Gears Clone: doubling waves, three alien types, gaits and telegraphed attacks",
+      "summary": "Waves now double each round (3, 6, 12, 24, 48), with at most 24 aliens alive at once and the rest streaming in from the far edges as you kill; a wave ends only when all are dead. There are three types: the normal violet alien, the small cyan skitterer (from wave 2) and the big orange brute (from wave 3). They move with distinct gaits (creep, trot, bound) and have four telegraphed attacks (claw swipe, bite lunge, tail stab, pounce) chosen by range. Aliens also slide round cover corners instead of standing stuck on them.",
+      "controls": "Click once to start (the first click starts the waves and captures the mouse). Mouse look, WASD move, Shift sprint, right mouse aims. Left mouse fires the current weapon. 1-4 or the wheel switches weapon, R reloads, C or Ctrl crouches, E takes or leaves cover. N or Enter calls the next wave now. Esc frees the mouse.",
+      "notes": "Click once to start. Press N or Enter to call the next wave early.",
+      "test": "Call a few waves with N: does the top of the screen count down (e.g. WAVE 5 - 48 ALIENS LEFT, 24 still to arrive) and does it stay playable with 24 alive? Watch the gaits: creep when searching, trot when circling, bound when chasing. Tell the three types apart (violet, cyan skitterer, orange brute) and react to each attack's telegraph. Do any aliens get stuck on cover?",
+      "status": "merged"
+    },
+    {
       "id": "main-998f8d2-2026-10-28",
       "game": "movement",
       "repo": "janxzs/Movement-Godot",
