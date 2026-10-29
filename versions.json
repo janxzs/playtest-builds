@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-998f8d2-2026-10-28",
+      "game": "movement",
+      "repo": "janxzs/Movement-Godot",
+      "pr": null,
+      "sha": "998f8d2",
+      "ticket": "MV-0006",
+      "datetime": "2026-10-28T20:24:03-07:00",
+      "date": "2026-10-28",
+      "engine": "4.7.2",
+      "pck": "builds/movement/main-998f8d2-2026-10-28/movement.pck",
+      "title": "Movement: reeling keeps swing momentum (MV-0006)",
+      "summary": "Reeling in (hold E) or out (hold X) on the grapple now keeps your swing momentum. Reel-in keeps your sideways speed and adds a little (a shorter rope swings faster, like a real rope), and reel-out lets you drop on the rope smoothly with no snap. Reeling in hard to a short rope shouldn't fling you over the beam.",
+      "controls": "Click to start (captures the mouse). Mouse look, WASD move, Shift sprint, Space jump, hold C to crouch (sprint + C slides). Right mouse or Q fires and releases the grapple, hold E reels in, hold X reels out, Space releases. R respawns at the start with the view level, F1 shows or hides the debug HUD. Esc frees the mouse and pauses; click to resume.",
+      "test": "Hook a beam or a tree branch, get a swing going, then hold E: does the swing speed up a little instead of stopping dead? Hold X mid-swing: do you drop smoothly with no jerk? Reel in hard to a short rope: are you whirled over the beam? Is the reel-in speed-up too little or too much?",
+      "status": "merged"
+    },
+    {
       "id": "main-a0f2d9d-2026-10-28",
       "game": "minecraft-clone",
       "repo": "janxzs/Minecraft-Clone-Godot",
