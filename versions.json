@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-08a2b84-2026-10-28",
+      "game": "movement",
+      "repo": "janxzs/Movement-Godot",
+      "pr": null,
+      "sha": "08a2b84",
+      "ticket": "MV-0007",
+      "datetime": "2026-10-28T21:21:02-07:00",
+      "date": "2026-10-28",
+      "engine": "4.7.2",
+      "pck": "builds/movement/main-08a2b84-2026-10-28/movement.pck",
+      "title": "Movement: smoothness pass (MV-0007)",
+      "summary": "A smoothness pass. Physics interpolation is on and the camera is interpolated every frame, so walking, sprinting, swinging and turning look smooth at any refresh rate. Crouch, slide and step transitions are eased instead of popping. New view effects: a small landing dip, a FOV boost at high speed and a slight roll when you strafe (all switchable off with view_effects=false). The rope now tightens over a few frames instead of yanking.",
+      "controls": "Click to start (captures the mouse). Mouse look, WASD move, Shift sprint, Space jump, hold C to crouch (sprint + C slides). Right mouse or Q fires and releases the grapple, hold E reels in, hold X reels out, Space releases. R respawns at the start with the view level, F1 shows or hides the debug HUD. Esc frees the mouse and pauses; click to resume.",
+      "test": "Walk, sprint, swing and turn the camera: does it look smooth, with no micro-stutter or mouse lag (best on a 120/144 Hz monitor)? Crouch, stand up and start a slide: does the eye ease down and up with no pop? Land from a jump and from the tower: is the landing dip small and soft? Hook on while running away: does the rope tighten in a few frames rather than yank? Does the FOV widen a little as you swing fast, and the view lean a hair into a strafe? Is any of it too much or not enough? Anything still not smooth?",
+      "status": "merged"
+    },
+    {
       "id": "main-0f682e4-2026-10-28",
       "game": "minecraft-clone",
       "repo": "janxzs/Minecraft-Clone-Godot",
