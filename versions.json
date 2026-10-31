@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-4828cf9-2026-10-31",
+      "game": "zeigote",
+      "repo": "janxzs/Zeigote-Godot",
+      "pr": null,
+      "sha": "4828cf9",
+      "ticket": "ZG-0049",
+      "datetime": "2026-10-31T06:02:17-07:00",
+      "date": "2026-10-31",
+      "engine": "4.7.2",
+      "pck": "builds/zeigote/main-4828cf9-2026-10-31/zeigote.pck",
+      "title": "Zeigote: towers shoot, enemies siege your walls, repair (ZG-0049). NEW SERVER ZIP NEEDED (net protocol 13 to 14)",
+      "summary": "NEW SERVER ZIP NEEDED (net protocol 13 to 14): get the zip from the Zeigote-Godot release playtest/main-4828cf9-2026-10-31 (Windows, includes the friends link script). The web page and the server must come from the same build (every build has its own zip); a mismatch shows a clear refusal message. Solo play needs nothing. What changed (ZG-0049): the Watchtower (Nexus Lv2, 20 m) and the Ballista (Lv3, 30 m, pierces) now shoot Zeigote; enemies that are blocked or pinned bite the nearest wall or piece in the way; damaged walls lose HP, collapse and can bring neighbours down in a cascade; in build mode hold G for 0.5 s to repair a piece for a fraction of its cost (F still deconstructs). Includes ZG-0048 (restart resync), ZG-0047 (tools reach boulders from 2.7 m, menus clear the hotbar at 800x450, remote arrows visible, Space jumps off the rope) and base building (B, F, E).",
+      "controls": "Menu: Play Solo, Join Co-op, Host Co-op (desktop). In game: click to lock the mouse, mouse look, WASD move, Space jump (on the rope: let go and jump), keys 1-9 or mouse wheel pick the hotbar item (slot 5 = grapple), C opens crafting, B opens the build menu (build mode: LEFT MOUSE places, R rotates, wheel cycles pieces, RIGHT MOUSE or a number key exits), hold F to deconstruct (50% refund), hold G (0.5 s) to repair a damaged piece, E within 7 m of the Nexus upgrades it (otherwise deposits drops), LEFT MOUSE uses the item (grapple: fire at the crosshair, click again to let go; sword: hold for a 3-hit combo; bow and slingshot: hold to draw, release to fire), hold RIGHT MOUSE TO BLOCK, N calls a raid now (debug), Esc menu (Leave to menu), V top-down view. Server flags (after --): --day-s N / --night-s N, --debug-cycle (24 s + 16 s cycle), --day-length S, --seed N.",
+      "test": "Upgrade the Nexus to Lv2/Lv3 (E near it), build a Watchtower and a Ballista (B), call a raid (N) or wait for night: do they shoot the enemies and do you see their shots in co-op? Wall off an approach: do enemies bite through the wall, does a broken wall come down? In build mode hold G on a damaged wall: does it heal for part of the cost? Use this build's server zip.",
+      "status": "merged"
+    },
+    {
       "id": "main-1ac0042-2026-10-31",
       "game": "zeigote",
       "repo": "janxzs/Zeigote-Godot",
