@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-9671a83-2026-10-28",
+      "game": "zeigote",
+      "repo": "janxzs/Zeigote-Godot",
+      "pr": null,
+      "sha": "9671a83",
+      "ticket": "ZG-0035, ZG-0036, ZG-0037, ZG-0038",
+      "datetime": "2026-10-28T23:34:20-07:00",
+      "date": "2026-10-28",
+      "engine": "4.7.2",
+      "pck": "builds/zeigote/main-9671a83-2026-10-28/zeigote.pck",
+      "title": "Zeigote: M4 complete, day gathering into a shared team pool (ZG-0035). New server zip needed (net protocol 8)",
+      "summary": "NEEDS THE NEW SERVER ZIP: the net protocol went from 7 to 8, so a server from an older build refuses this client and this build refuses older servers. Download the server zip from the Zeigote-Godot release playtest/main-9671a83-2026-10-28 (Windows, includes the friends link script). Solo play needs nothing. What changed (completes M4): by day, harvesting resource nodes (E) feeds ONE shared team resource pool shown on the HUD (Team resources N, with how many you gathered); nothing spends it yet, building comes in M5. The DAY/NIGHT phase label moved to the top right so it no longer overlaps the info panel. The player no longer stalls when you push diagonally into a wall corner or a ramp channel (ported from Minecraft Clone). The night waves, melee and block from the last build are unchanged. Tower Defense building modules are in the code but not wired up yet.",
+      "controls": "Menu: Play Solo, Join Co-op, Host Co-op (desktop). In game: click to lock the mouse, mouse look, WASD move, Space jump, LEFT MOUSE ATTACKS, hold RIGHT MOUSE TO BLOCK, E HARVEST a resource node (or deposit drops at the Nexus), N calls a raid now (debug), Esc menu (Leave to menu), V top-down view. Server flags (after --): --day-s N / --night-s N (phase lengths in seconds), --debug-cycle (short 24 s + 16 s cycle), --day-length S, --seed N.",
+      "test": "By day, walk to the resource nodes and press E: does Team resources go up on the HUD, and does it show the same number for everyone in co-op (try two windows)? Is the DAY/NIGHT label at the top right and clear of the info panel? Push diagonally into the corner of the Nexus platform and up its ramps: do you keep moving? At night the waves, left click and right click block work as before. Use the new server zip: an older server shows a version mismatch message.",
+      "status": "merged"
+    },
+    {
       "id": "main-a97d5b1-2026-10-28",
       "game": "zeigote",
       "repo": "janxzs/Zeigote-Godot",
