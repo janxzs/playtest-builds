@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-97ac04f-2026-10-31",
+      "game": "zeigote",
+      "repo": "janxzs/Zeigote-Godot",
+      "pr": null,
+      "sha": "97ac04f",
+      "ticket": "ZG-0046",
+      "datetime": "2026-10-31T02:13:01-07:00",
+      "date": "2026-10-31",
+      "engine": "4.7.2",
+      "pck": "builds/zeigote/main-97ac04f-2026-10-31/zeigote.pck",
+      "title": "Zeigote: base building core (ZG-0046): walls, floors, stairs and ramps (B), deconstruct (F), Nexus levels (E). NEW SERVER ZIP NEEDED (net protocol 12 to 13)",
+      "summary": "NEW SERVER ZIP NEEDED (net protocol 12 to 13). The web page and the server must come from the same build (a mismatch shows a clear 'version mismatch' message). Get the zip from the Zeigote-Godot release playtest/main-97ac04f-2026-10-31 (Windows, includes the friends link script). Solo play needs nothing. What changed: press B to open the build menu (walls, floors, stairs, ramps, paid from the team pool); in build mode LMB places, R rotates, the mouse wheel cycles pieces, RMB or a number key exits; hold F to deconstruct a piece for a 50% refund; press E within 7 m of the Nexus to upgrade it (Lv1 unlocks gates and stone walls, Lv2 a watchtower, Lv3 a ballista; towers do not shoot yet); the server refuses any placement that would seal the Nexus. Everything from 1dc8bd2 stays: grapple in slot 5, crafting, tools, pool, level spawn camera.",
+      "controls": "Menu: Play Solo, Join Co-op, Host Co-op (desktop). In game: click to lock the mouse, mouse look, WASD move, Space jump, keys 1-9 or mouse wheel pick the hotbar item (slot 5 = grapple), C opens crafting, B opens the build menu (build mode: LEFT MOUSE places, R rotates, wheel cycles pieces, RIGHT MOUSE or a number key exits), hold F to deconstruct (50% refund), E within 7 m of the Nexus upgrades it (otherwise deposits drops), LEFT MOUSE uses the item (grapple: fire at the crosshair, click again to let go; sword: hold for a 3-hit combo; bow and slingshot: hold to draw, release to fire), hold RIGHT MOUSE TO BLOCK, N calls a raid now (debug), Esc menu (Leave to menu), V top-down view. Server flags (after --): --day-s N / --night-s N, --debug-cycle (24 s + 16 s cycle), --day-length S, --seed N.",
+      "test": "Press B and place a wall, floor, stairs and ramp from the team pool; rotate with R; deconstruct with F (half the cost comes back). Are locked pieces greyed out until you upgrade the Nexus (E near it)? Try to wall in the Nexus completely: the server should refuse with a message. Do other players see your structures? Use this build's server zip: an older server shows a version mismatch message.",
+      "status": "merged"
+    },
+    {
       "id": "main-1dc8bd2-2026-10-31",
       "game": "zeigote",
       "repo": "janxzs/Zeigote-Godot",
