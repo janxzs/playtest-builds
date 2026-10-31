@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-dadecfc-2026-10-30",
+      "game": "movement",
+      "repo": "janxzs/Movement-Godot",
+      "pr": null,
+      "sha": "dadecfc",
+      "ticket": "MV-0008",
+      "datetime": "2026-10-30T20:02:07-07:00",
+      "date": "2026-10-30",
+      "engine": "4.7.2",
+      "pck": "builds/movement/main-dadecfc-2026-10-30/movement.pck",
+      "title": "Movement: reel in is a slingshot, not a brake (MV-0008)",
+      "summary": "MV-0008: reeling in (hold E) mid-swing now works like a slingshot instead of a brake. Reeling in a few metres at the bottom of a swing gives about 56% more total speed (35% more swing speed) than not reeling, and roughly double the carry when you let go (about 21 m versus 10 m); reeling on the upswing gives about +67% total speed. The pull now builds up over a fraction of a second instead of an instant jerk, and the swing no longer gets pinned under the anchor. Holding E for a long time (over about 0.6 s) still hauls you toward the anchor, so release early. The debug HUD (F1) now shows your total speed while you are hooked.",
+      "controls": "Click to start (captures the mouse). Mouse look, WASD move, Shift sprint, Space jump, hold C to crouch (sprint + C slides). Right mouse or Q fires and releases the grapple, hold E reels in, hold X reels out, Space releases. R respawns at the start with the view level, F1 shows or hides the debug HUD. Esc frees the mouse and pauses; click to resume.",
+      "test": "Hook a beam or a tree branch, get a swing going, and at the bottom of the swing hold E for about half a second, then release the hook (Q or right mouse) a moment later. Do you shoot forward faster and carry much further than if you had not reeled? Try it again on the upswing. Does the pull feel smooth, not like a jerk or a brake? Press F1: does the HUD show your total speed while hooked? Is it too much or too little?",
+      "status": "merged"
+    },
+    {
       "id": "main-9671a83-2026-10-28",
       "game": "zeigote",
       "repo": "janxzs/Zeigote-Godot",
