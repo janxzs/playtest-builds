@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-ac7353e-2026-10-30",
+      "game": "zeigote",
+      "repo": "janxzs/Zeigote-Godot",
+      "pr": null,
+      "sha": "ac7353e",
+      "ticket": "ZG-0039, ZG-0040",
+      "datetime": "2026-10-30T20:49:38-07:00",
+      "date": "2026-10-30",
+      "engine": "4.7.2",
+      "pck": "builds/zeigote/main-ac7353e-2026-10-30/zeigote.pck",
+      "title": "Zeigote: tools, hotbar and harvesting wood, stone and sand (ZG-0039). New server zip needed (net protocol 10)",
+      "summary": "NEEDS THE NEW SERVER ZIP: the net protocol went from 8 to 10, so a server from an older build refuses this client and this build refuses older servers. Download the server zip from the Zeigote-Godot release playtest/main-ac7353e-2026-10-30 (Windows, includes the friends link script). Solo play needs nothing. What changed: the resource boxes are gone. You now have a hotbar: 1 Club, 2 Pickaxe, 3 Axe, 4 Shovel (keys 1-9 or the mouse wheel). Left mouse uses the item and holding repeats. The axe fells trees for wood, the pickaxe breaks rocks for stone, the shovel digs sand; felled trees and rocks grow back after 2 days. The HUD shows the hotbar and the shared team pool of wood, stone and sand. E now only deposits drops at the Nexus. Fixes: the NEXUS DESTROYED screen now shows even if you were downed first, the loss screen keeps the night it was lost on, the phase label layout adapts to the window width, and the websocket buffers are bigger with a server congestion guard. Test pages can read window.zgState.",
+      "controls": "Menu: Play Solo, Join Co-op, Host Co-op (desktop). In game: click to lock the mouse, mouse look, WASD move, Space jump, keys 1-9 or mouse wheel pick the hotbar item (1 Club, 2 Pickaxe, 3 Axe, 4 Shovel), LEFT MOUSE uses the item (hold to repeat), hold RIGHT MOUSE TO BLOCK, E deposits drops at the Nexus, N calls a raid now (debug), Esc menu (Leave to menu), V top-down view. Server flags (after --): --day-s N / --night-s N (phase lengths in seconds), --debug-cycle (short 24 s + 16 s cycle), --day-length S, --seed N.",
+      "test": "Press 3 and hit a tree with left mouse: does it fall and give wood? Press 2 on a rock for stone, 4 on sand for sand. Does the hotbar and the wood/stone/sand pool show on the HUD, and the same numbers in a second window? Do the tree and rock disappear for both players? Do the 1-9 keys and the mouse wheel change the item? At night, let the Nexus fall: do you get the NEXUS DESTROYED screen even if you were already downed? Use the new server zip: an older server shows a version mismatch message.",
+      "status": "merged"
+    },
+    {
       "id": "main-dadecfc-2026-10-30",
       "game": "movement",
       "repo": "janxzs/Movement-Godot",
