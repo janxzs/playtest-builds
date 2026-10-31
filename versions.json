@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-3043c89-2026-10-30",
+      "game": "zeigote",
+      "repo": "janxzs/Zeigote-Godot",
+      "pr": null,
+      "sha": "3043c89",
+      "ticket": "ZG-0044",
+      "datetime": "2026-10-30T23:52:13-07:00",
+      "date": "2026-10-30",
+      "engine": "4.7.2",
+      "pck": "builds/zeigote/main-3043c89-2026-10-30/zeigote.pck",
+      "title": "Zeigote: grappling hook in hotbar slot 5 (ZG-0044). New server zip needed (net protocol 11 to 12)",
+      "summary": "NEW SERVER ZIP NEEDED (net protocol 11 to 12): this build cannot join an older server, and older builds cannot join its server; a mismatch shows a clear 'version mismatch' message. Get the zip from the Zeigote-Godot release playtest/main-3043c89-2026-10-30 (Windows, includes the friends link script). Solo play needs nothing. What changed: everyone starts with a grappling hook in hotbar slot 5 (crafted weapons now go into slots from 6). It hooks terrain, rocks, trees and the Nexus within 38 m and attaches instantly. Left mouse fires it and fires again to let go. While hooked, the mouse wheel reels (up = in, down = out), Shift reels in and Ctrl reels out, and Space jumps off the rope. Reeling in while swinging adds speed and you keep your momentum after letting go. Other players see your rope and the swing. Everything from 0083c97 stays: walkable Nexus ziggurat, crafting a sword, bow and slingshot, bigger terrain, hotbar tools, shared pool. Test pages can read window.zgState.",
+      "controls": "Menu: Play Solo, Join Co-op, Host Co-op (desktop). In game: click to lock the mouse, mouse look, WASD move, Space jump, keys 1-9 or mouse wheel pick the hotbar item (slot 5 = grapple), C opens crafting (Esc closes it), LEFT MOUSE uses the item (grapple: fire at the crosshair, click again to let go; hold to repeat for tools; sword: hold for a 3-hit combo; bow and slingshot: hold to draw, release to fire), while hooked the wheel reels (up in, down out), Shift reels in, Ctrl reels out, Space jumps off the rope, hold RIGHT MOUSE TO BLOCK, E deposits drops at the Nexus, N calls a raid now (debug), Esc menu (Leave to menu), V top-down view. Server flags (after --): --day-s N / --night-s N, --debug-cycle (24 s + 16 s cycle), --day-length S, --seed N.",
+      "test": "Press 5 for the grapple, aim at the Nexus, a tree or a rock and click: does the rope attach at once? Reel in with the wheel or Shift and swing: do you gain speed, and do you keep it after letting go (click again or Space)? Does the other player see your rope and the swinging body? Does the wheel still change items when you are not hooked? Any rubber-banding at your ping? Use the new server zip: an older server shows a version mismatch message.",
+      "status": "merged"
+    },
+    {
       "id": "main-0083c97-2026-10-30",
       "game": "zeigote",
       "repo": "janxzs/Zeigote-Godot",
