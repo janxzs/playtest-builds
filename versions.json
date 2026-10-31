@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-1dc8bd2-2026-10-31",
+      "game": "zeigote",
+      "repo": "janxzs/Zeigote-Godot",
+      "pr": null,
+      "sha": "1dc8bd2",
+      "ticket": "ZG-0045",
+      "datetime": "2026-10-31T01:08:15-07:00",
+      "date": "2026-10-31",
+      "engine": "4.7.2",
+      "pck": "builds/zeigote/main-1dc8bd2-2026-10-31/zeigote.pck",
+      "title": "Zeigote: playtest fixes (ZG-0045): fewer giants, forest trails, level spawn camera, rocks hit at a level aim, HUD fits at 800 px. Protocol 12 but world gen changed: use this build's server zip",
+      "summary": "Protocol 12, same as 3043c89, but world gen changed: use this build's server zip. The web page and the server must come from the same build (a mismatch shows a clear 'version mismatch' message). Get the zip from the Zeigote-Godot release playtest/main-1dc8bd2-2026-10-31 (Windows, includes the friends link script). Solo play needs nothing. What changed: giants are about 17% of trees and rocks (down from 75%), forests have trails and walkable gaps, the camera spawns level, tools hit rocks at a level aim, the HUD fits at 800 px and the craft menu sits below the info panel. Everything from 3043c89 stays: grapple in slot 5, walkable Nexus, crafting, tools, pool. Test pages can read window.zgState (now with pitch, vel, grapple, others, projectiles, last_kill) and use window.zgTest.aimAt / fire.",
+      "controls": "Menu: Play Solo, Join Co-op, Host Co-op (desktop). In game: click to lock the mouse, mouse look, WASD move, Space jump, keys 1-9 or mouse wheel pick the hotbar item (slot 5 = grapple), C opens crafting (Esc closes it), LEFT MOUSE uses the item (grapple: fire at the crosshair, click again to let go; sword: hold for a 3-hit combo; bow and slingshot: hold to draw, release to fire), while hooked the wheel reels (up in, down out), Shift reels in, Ctrl reels out, Space jumps off the rope, hold RIGHT MOUSE TO BLOCK, E deposits drops at the Nexus, N calls a raid now (debug), Esc menu (Leave to menu), V top-down view. Server flags (after --): --day-s N / --night-s N, --debug-cycle (24 s + 16 s cycle), --day-length S, --seed N.",
+      "test": "Does the camera spawn level (not looking at the sky)? Walk into a forest: are there trails and gaps you can walk through, and are giants rarer? Does the pickaxe break a rock when you look straight at it? Is the HUD readable in a small (800 px) window, and does the craft menu (C) sit below the info panel? Use this build's server zip: an older server shows a version mismatch message or a different world.",
+      "status": "merged"
+    },
+    {
       "id": "main-3043c89-2026-10-30",
       "game": "zeigote",
       "repo": "janxzs/Zeigote-Godot",
