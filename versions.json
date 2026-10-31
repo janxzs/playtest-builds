@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-9117913-2026-10-31",
+      "game": "zeigote",
+      "repo": "janxzs/Zeigote-Godot",
+      "pr": null,
+      "sha": "9117913",
+      "ticket": "ZG-0047",
+      "datetime": "2026-10-31T03:48:31-07:00",
+      "date": "2026-10-31",
+      "engine": "4.7.2",
+      "pck": "builds/zeigote/main-9117913-2026-10-31/zeigote.pck",
+      "title": "Zeigote: web test fixes (ZG-0047): tools reach boulders from 2.7 m, menus clear the hotbar at 800x450, remote arrows visible, Space jumps off the rope. Net protocol 13, same as 97ac04f: the 97ac04f server zip still works",
+      "summary": "Net protocol 13, same as 97ac04f, and the world generation is unchanged: the server zip of main-97ac04f-2026-10-31 stays compatible (this build's own zip, on the Zeigote-Godot release playtest/main-9117913-2026-10-31, is the same server with the fixes). The web page and the server still need the same protocol (a mismatch shows a clear 'version mismatch' message). Solo play needs nothing. What changed (ZG-0047): a pickaxe or axe with a level aim now hits a giant boulder from about 2.7 m (reach is measured to the surface, 3.2 m + slack), the craft and build menus clear the hotbar at 800x450 (the info panel hides while a menu is open in a small window), arrows and pebbles shot by another player are now at least 3 px wide so you can see them in flight, and Space while hooked lets go of the rope AND jumps (the swing's horizontal speed is kept). Everything from 97ac04f stays: base building (B), deconstruct (F), Nexus levels (E), grapple in slot 5, crafting, tools.",
+      "controls": "Menu: Play Solo, Join Co-op, Host Co-op (desktop). In game: click to lock the mouse, mouse look, WASD move, Space jump (on the rope: let go and jump), keys 1-9 or mouse wheel pick the hotbar item (slot 5 = grapple), C opens crafting, B opens the build menu (build mode: LEFT MOUSE places, R rotates, wheel cycles pieces, RIGHT MOUSE or a number key exits), hold F to deconstruct (50% refund), E within 7 m of the Nexus upgrades it (otherwise deposits drops), LEFT MOUSE uses the item (grapple: fire at the crosshair, click again to let go; sword: hold for a 3-hit combo; bow and slingshot: hold to draw, release to fire), hold RIGHT MOUSE TO BLOCK, N calls a raid now (debug), Esc menu (Leave to menu), V top-down view. Server flags (after --): --day-s N / --night-s N, --debug-cycle (24 s + 16 s cycle), --day-length S, --seed N.",
+      "test": "Level aim at a big boulder with the pickaxe from about 2.7 m: does it break and give stone? At 800x450 open the craft menu (C) and the build menu (B): do they clear the hotbar? In co-op, can you see the other player's arrows in flight? Hook the grapple and press Space: do you let go and jump with your swing speed? No new server zip is required if you already have the 97ac04f one.",
+      "status": "merged"
+    },
+    {
       "id": "main-97ac04f-2026-10-31",
       "game": "zeigote",
       "repo": "janxzs/Zeigote-Godot",
