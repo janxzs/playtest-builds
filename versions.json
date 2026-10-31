@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-1ac0042-2026-10-31",
+      "game": "zeigote",
+      "repo": "janxzs/Zeigote-Godot",
+      "pr": null,
+      "sha": "1ac0042",
+      "ticket": "ZG-0048",
+      "datetime": "2026-10-31T04:30:47-07:00",
+      "date": "2026-10-31",
+      "engine": "4.7.2",
+      "pck": "builds/zeigote/main-1ac0042-2026-10-31/zeigote.pck",
+      "title": "Zeigote: restart resync (ZG-0048): after a restart your client clears old walls and shows the real Nexus level, props and enemies; the seal check also guards the client build path. Net protocol 13 (unchanged) but use this build's server zip",
+      "summary": "Net protocol 13 and the world generation are unchanged, but the server also checks the build id, so every build needs its own server zip: get this build's zip from the Zeigote-Godot release playtest/main-1ac0042-2026-10-31 (Windows, includes the friends link script). Solo play needs nothing. What changed (ZG-0048): after a match restart (R) the clients now drop the old walls and resync the Nexus level, felled trees (props) and enemies from the server instead of keeping stale ones; the 'Blocks every path to the Nexus' seal check now also runs on the normal client build path; web test hooks for automation. Includes ZG-0047 (tools reach boulders from 2.7 m, menus clear the hotbar at 800x450, remote arrows visible, Space jumps off the rope) and all of 97ac04f base building (B), deconstruct (F), Nexus levels (E).",
+      "controls": "Menu: Play Solo, Join Co-op, Host Co-op (desktop). In game: click to lock the mouse, mouse look, WASD move, Space jump (on the rope: let go and jump), keys 1-9 or mouse wheel pick the hotbar item (slot 5 = grapple), C opens crafting, B opens the build menu (build mode: LEFT MOUSE places, R rotates, wheel cycles pieces, RIGHT MOUSE or a number key exits), hold F to deconstruct (50% refund), E within 7 m of the Nexus upgrades it (otherwise deposits drops), LEFT MOUSE uses the item (grapple: fire at the crosshair, click again to let go; sword: hold for a 3-hit combo; bow and slingshot: hold to draw, release to fire), hold RIGHT MOUSE TO BLOCK, N calls a raid now (debug), Esc menu (Leave to menu), V top-down view. Server flags (after --): --day-s N / --night-s N, --debug-cycle (24 s + 16 s cycle), --day-length S, --seed N.",
+      "test": "Build a few walls, press R to restart: are the old walls gone for every player (F on the old spot finds nothing)? Try to wall the Nexus in completely: the last wall is refused with 'Blocks every path to the Nexus'. Rotate a piece (R) and place it. Use this build's server zip.",
+      "status": "merged"
+    },
+    {
       "id": "main-9117913-2026-10-31",
       "game": "zeigote",
       "repo": "janxzs/Zeigote-Godot",
