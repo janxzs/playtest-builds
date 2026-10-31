@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-0538761-2026-10-31",
+      "game": "zeigote",
+      "repo": "janxzs/Zeigote-Godot",
+      "pr": null,
+      "sha": "0538761",
+      "ticket": "ZG-0050",
+      "datetime": "2026-10-31T08:22:07-07:00",
+      "date": "2026-10-31",
+      "engine": "4.7.2",
+      "pck": "builds/zeigote/main-0538761-2026-10-31/zeigote.pck",
+      "title": "Zeigote: restart input fix, hold-G repair prompt, menus fit 800 px, visible remote projectiles (ZG-0050)",
+      "summary": "Net protocol 14 is unchanged from 4828cf9, but the server also checks the build id, so every build still needs its own matching server zip: use the zip from the Zeigote-Godot release playtest/main-0538761-2026-10-31 (Windows, includes the friends link script). Solo play needs nothing. What changed (ZG-0050): after a restart (R) the server no longer drops your new inputs (a stale input packet made players stand still on the server); build mode shows a 'hold G: repair' prompt on a damaged piece; the pause and game-over menus fit at 800 px; other players' arrows and pebbles are at least 5 px wide and 28 px long in bright colours; web test state zgState v6 (vel is the measured motion, vel_body the sim's wanted velocity). Includes ZG-0049 (watchtower and ballista shoot, enemies bite walls, hold G repairs), ZG-0048, ZG-0047 and base building.",
+      "controls": "Menu: Play Solo, Join Co-op, Host Co-op (desktop). In game: click to lock the mouse, mouse look, WASD move, Space jump (on the rope: let go and jump), keys 1-9 or mouse wheel pick the hotbar item (slot 5 = grapple), C opens crafting, B opens the build menu (build mode: LEFT MOUSE places, R rotates, wheel cycles pieces, RIGHT MOUSE or a number key exits), hold F to deconstruct (50% refund), hold G (0.5 s) to repair a damaged piece, E within 7 m of the Nexus upgrades it (otherwise deposits drops), LEFT MOUSE uses the item (grapple: fire at the crosshair, click again to let go; sword: hold for a 3-hit combo; bow and slingshot: hold to draw, release to fire), hold RIGHT MOUSE TO BLOCK, N calls a raid now (debug), Esc menu (Leave to menu), V top-down view. Server flags (after --): --day-s N / --night-s N, --debug-cycle (24 s + 16 s cycle), --day-length S, --seed N.",
+      "test": "Upgrade the Nexus to Lv2/Lv3 (E near it), build a Watchtower and a Ballista (B), call a raid (N) or wait for night: do they shoot the enemies and do you see their shots in co-op? Wall off an approach: do enemies bite through the wall, does a broken wall come down? In build mode hold G on a damaged wall: does it heal for part of the cost? Use this build's server zip.",
+      "status": "merged"
+    },
+    {
       "id": "main-4828cf9-2026-10-31",
       "game": "zeigote",
       "repo": "janxzs/Zeigote-Godot",
