@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-0083c97-2026-10-30",
+      "game": "zeigote",
+      "repo": "janxzs/Zeigote-Godot",
+      "pr": null,
+      "sha": "0083c97",
+      "ticket": "ZG-0042, ZG-0043",
+      "datetime": "2026-10-30T22:50:32-07:00",
+      "date": "2026-10-30",
+      "engine": "4.7.2",
+      "pck": "builds/zeigote/main-0083c97-2026-10-30/zeigote.pck",
+      "title": "Zeigote: walkable Nexus ziggurat (ZG-0042) and crafting a sword, bow and slingshot (ZG-0043). New server zip needed (net protocol 10 to 11)",
+      "summary": "NEW SERVER ZIP NEEDED (net protocol 10 to 11): this build cannot join an older server, and older builds cannot join its server; a mismatch shows a clear 'version mismatch' message. Get the zip from the Zeigote-Godot release playtest/main-0083c97-2026-10-30 (Windows, includes the friends link script). Solo play needs nothing. What changed: the Nexus is now an 11 m ziggurat with ramps up both long sides to a walkable platform. Press C to open crafting (Esc closes it): from the shared team pool you can craft a sword (wood 4, stone 10, sand 2), a bow (wood 10, stone 4) or a slingshot (wood 6, stone 4); the weapon goes into your hotbar. The sword does a 3-hit combo while you hold left mouse. The bow and slingshot draw while you hold left mouse and fire when you release; other players see the arrows. Everything from ef9bda2 stays: bigger terrain with giants, hotbar tools, shared pool, regrow after 2 days. Test pages can read window.zgState.",
+      "controls": "Menu: Play Solo, Join Co-op, Host Co-op (desktop). In game: click to lock the mouse, mouse look, WASD move, Space jump, keys 1-9 or mouse wheel pick the hotbar item, C opens crafting (Esc closes it), LEFT MOUSE uses the item (hold to repeat; sword: hold for a 3-hit combo; bow and slingshot: hold to draw, release to fire), hold RIGHT MOUSE TO BLOCK, E deposits drops at the Nexus, N calls a raid now (debug), Esc menu (Leave to menu), V top-down view. Server flags (after --): --day-s N / --night-s N, --debug-cycle (24 s + 16 s cycle), --day-length S, --seed N.",
+      "test": "Walk up a ramp of the Nexus ziggurat to the platform: any stalls? Gather wood, stone and sand, press C and craft a sword, bow or slingshot: does the pool drop by the cost in both windows and does the weapon appear in the hotbar? Sword: hold left mouse for the 3-hit combo. Bow and slingshot: hold to draw, release to fire: does the other player see the arrows, and do they kill a Zeigote? Is the craft menu centered in your window size? Use the new server zip: an older server shows a version mismatch message.",
+      "status": "merged"
+    },
+    {
       "id": "main-ef9bda2-2026-10-30",
       "game": "zeigote",
       "repo": "janxzs/Zeigote-Godot",
