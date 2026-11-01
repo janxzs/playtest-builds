@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-f53ccae-2026-11-01",
+      "game": "zeigote",
+      "repo": "janxzs/Zeigote-Godot",
+      "pr": null,
+      "sha": "f53ccae",
+      "ticket": "ZG-0055",
+      "datetime": "2026-11-01T15:47:07-08:00",
+      "date": "2026-11-01",
+      "engine": "4.7.2",
+      "pck": "builds/zeigote/main-f53ccae-2026-11-01/zeigote.pck",
+      "title": "Zeigote: grapple feel, 90 m range, hookable tree tops, baobab trees (ZG-0055)",
+      "summary": "Net protocol 15 is unchanged from 341d3a4, but the server also checks the build id, so each build needs its matching server zip (release playtest/main-f53ccae-2026-11-01, Windows, includes the friends link script). Solo play needs nothing. What changed (ZG-0055): grapple cooldown 0.35 to 0.175 s; the hook is more forgiving (a fan of rays up to 6 degrees around the crosshair, taking what is within 0.7 m of the aim line); range 38 to 90 m; tree crowns and branches can be hooked (landmark tree tops at about 56 m); all trees are now baobab-style with 6 thick branches. Includes ZG-0056 (real sound effects) and earlier.",
+      "controls": "Menu: Play Solo, Join Co-op, Host Co-op (desktop). In game: click to lock the mouse, mouse look, WASD move, Space jump (on the rope: let go and jump), keys 1-9 or mouse wheel pick the hotbar item (slot 5 = grapple), C opens crafting, B opens the build menu (build mode: LEFT MOUSE places, R rotates, wheel cycles pieces, RIGHT MOUSE or a number key exits), hold F to deconstruct (50% refund), hold G (0.5 s) to repair a damaged piece, E within 7 m of the Nexus upgrades it (otherwise deposits drops), LEFT MOUSE uses the item (grapple: fire at the crosshair, click again to let go; sword: hold for a 3-hit combo; bow and slingshot: hold to draw, release to fire), hold RIGHT MOUSE TO BLOCK, N calls a raid now (debug), Esc menu (Leave to menu), V top-down view. Server flags (after --): --day-s N / --night-s N, --debug-cycle (24 s + 16 s cycle), --day-length S, --seed N.",
+      "test": "Upgrade the Nexus to Lv2/Lv3 (E near it), build a Watchtower and a Ballista (B), call a raid (N) or wait for night: do they shoot the enemies and do you see their shots in co-op? Wall off an approach: do enemies bite through the wall, does a broken wall come down? In build mode hold G on a damaged wall: does it heal for part of the cost? Use this build's server zip.",
+      "status": "merged"
+    },
+    {
       "id": "main-341d3a4-2026-11-01",
       "game": "zeigote",
       "repo": "janxzs/Zeigote-Godot",
