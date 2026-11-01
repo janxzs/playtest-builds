@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-903f03e-2026-11-01",
+      "game": "zeigote",
+      "repo": "janxzs/Zeigote-Godot",
+      "pr": null,
+      "sha": "903f03e",
+      "ticket": "ZG-0054",
+      "datetime": "2026-11-01T02:59:59-08:00",
+      "date": "2026-11-01",
+      "engine": "4.7.2",
+      "pck": "builds/zeigote/main-903f03e-2026-11-01/zeigote.pck",
+      "title": "Zeigote: one Esc closes one layer (ZG-0054)",
+      "summary": "Net protocol 15 is unchanged from a55f08c, but the server also checks the build id, so each build needs its matching server zip (release playtest/main-903f03e-2026-11-01, Windows, includes the friends link script). Solo play needs nothing. What changed (ZG-0054): one Esc closes exactly one layer (C, B or pause); in the browser, Esc-closing a menu no longer asks for the pointer lock (the cursor stays free, 'Click to look around' shows once and a click re-locks); R and the Restart button close the pause menu; enemies and players that have left the scene tree are guarded (no get_global_transform errors after Leave to menu). Includes ZG-0053 (menus keep the keyboard) and earlier.",
+      "controls": "Menu: Play Solo, Join Co-op, Host Co-op (desktop). In game: click to lock the mouse, mouse look, WASD move, Space jump (on the rope: let go and jump), keys 1-9 or mouse wheel pick the hotbar item (slot 5 = grapple), C opens crafting, B opens the build menu (build mode: LEFT MOUSE places, R rotates, wheel cycles pieces, RIGHT MOUSE or a number key exits), hold F to deconstruct (50% refund), hold G (0.5 s) to repair a damaged piece, E within 7 m of the Nexus upgrades it (otherwise deposits drops), LEFT MOUSE uses the item (grapple: fire at the crosshair, click again to let go; sword: hold for a 3-hit combo; bow and slingshot: hold to draw, release to fire), hold RIGHT MOUSE TO BLOCK, N calls a raid now (debug), Esc menu (Leave to menu), V top-down view. Server flags (after --): --day-s N / --night-s N, --debug-cycle (24 s + 16 s cycle), --day-length S, --seed N.",
+      "test": "Upgrade the Nexus to Lv2/Lv3 (E near it), build a Watchtower and a Ballista (B), call a raid (N) or wait for night: do they shoot the enemies and do you see their shots in co-op? Wall off an approach: do enemies bite through the wall, does a broken wall come down? In build mode hold G on a damaged wall: does it heal for part of the cost? Use this build's server zip.",
+      "status": "merged"
+    },
+    {
       "id": "main-a55f08c-2026-11-01",
       "game": "zeigote",
       "repo": "janxzs/Zeigote-Godot",
