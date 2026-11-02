@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-3256fcb-2026-11-02",
+      "game": "zeigote",
+      "repo": "janxzs/Zeigote-Godot",
+      "pr": null,
+      "sha": "3256fcb",
+      "ticket": "ZG-0060",
+      "datetime": "2026-11-02T12:53:58-08:00",
+      "date": "2026-11-02",
+      "engine": "4.7.2",
+      "pck": "builds/zeigote/main-3256fcb-2026-11-02/zeigote.pck",
+      "title": "Zeigote: new chopping and mining sounds, 3D sounds 1 dB quieter (ZG-0060)",
+      "summary": "Net protocol 15 is unchanged from 364a4b2, but the server also checks the build id, so each build needs its matching server zip (release playtest/main-3256fcb-2026-11-02, Windows, includes the friends link script). Solo play needs nothing. What changed (ZG-0060): new hit_wood (chopping a tree) and hit_stone (mining a boulder) sounds, picked after a Gemini audio review of every sound (all other sounds kept); every 3D sound is trimmed by 1 dB so close-by sounds stay at or under a browser peak of 0.9. Includes ZG-0058, ZG-0057, ZG-0061 (day 180 s / night 120 s) and earlier.",
+      "controls": "Menu: Play Solo, Join Co-op, Host Co-op (desktop). In game: click to lock the mouse, mouse look, WASD move, Space jump (on the rope: let go and jump), keys 1-9 or mouse wheel pick the hotbar item (slot 5 = grapple), C opens crafting, B opens the build menu (build mode: LEFT MOUSE places, R rotates, wheel cycles pieces, RIGHT MOUSE or a number key exits), hold F to deconstruct (50% refund), hold G (0.5 s) to repair a damaged piece, E within 7 m of the Nexus upgrades it (otherwise deposits drops), LEFT MOUSE uses the item (grapple: fire at the crosshair, click again to let go; sword: hold for a 3-hit combo; bow and slingshot: hold to draw, release to fire), hold RIGHT MOUSE TO BLOCK, N calls a raid now (debug), Esc menu (Leave to menu), V top-down view. Server flags (after --): --day-s N / --night-s N, --debug-cycle (24 s + 16 s cycle), --day-length S, --seed N.",
+      "test": "Chop a tree and mine a boulder: do the new wood and stone hits sound better? Are sounds close to you still free of crackle? Use this build's server zip.",
+      "status": "merged"
+    },
+    {
       "id": "main-364a4b2-2026-11-02",
       "game": "zeigote",
       "repo": "janxzs/Zeigote-Godot",
