@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-364a4b2-2026-11-02",
+      "game": "zeigote",
+      "repo": "janxzs/Zeigote-Godot",
+      "pr": null,
+      "sha": "364a4b2",
+      "ticket": "ZG-0058",
+      "datetime": "2026-11-02T11:48:03-08:00",
+      "date": "2026-11-02",
+      "engine": "4.7.2",
+      "pck": "builds/zeigote/main-364a4b2-2026-11-02/zeigote.pck",
+      "title": "Zeigote: fuller bow sound, palms again + landmark baobabs, day 180 s / night 120 s (ZG-0058, ZG-0057, ZG-0061)",
+      "summary": "Net protocol 15 is unchanged from f53ccae, but the server also checks the build id, so each build needs its matching server zip (release playtest/main-364a4b2-2026-11-02, Windows, includes the friends link script). Solo play needs nothing. What changed: ZG-0058 the bow sounds fuller (less tinny) and every sound is capped to a browser peak of 0.9 or below (twelve sounds used to clip); ZG-0057 ordinary trees are palms, acacias and tamarisks again (108-246 triangles) and about 11% of the trees are landmark baobabs with 8 near-horizontal branches about 18 m long (hookable, a wide flat crown); ZG-0061 the day is 180 s and the night 120 s (was 360 + 240). Includes ZG-0055 (grapple feel, 90 m range) and earlier.",
+      "controls": "Menu: Play Solo, Join Co-op, Host Co-op (desktop). In game: click to lock the mouse, mouse look, WASD move, Space jump (on the rope: let go and jump), keys 1-9 or mouse wheel pick the hotbar item (slot 5 = grapple), C opens crafting, B opens the build menu (build mode: LEFT MOUSE places, R rotates, wheel cycles pieces, RIGHT MOUSE or a number key exits), hold F to deconstruct (50% refund), hold G (0.5 s) to repair a damaged piece, E within 7 m of the Nexus upgrades it (otherwise deposits drops), LEFT MOUSE uses the item (grapple: fire at the crosshair, click again to let go; sword: hold for a 3-hit combo; bow and slingshot: hold to draw, release to fire), hold RIGHT MOUSE TO BLOCK, N calls a raid now (debug), Esc menu (Leave to menu), V top-down view. Server flags (after --): --day-s N / --night-s N, --debug-cycle (24 s + 16 s cycle), --day-length S, --seed N.",
+      "test": "Shoot the bow: does it sound fuller, and do loud sounds (pick up, deposit, sling) no longer crackle? Look at the trees: palms, acacias and tamarisks, with some big landmark baobabs. Grapple onto a baobab's wide branch and onto a palm crown. Does a full day (3 min) and night (2 min) feel right? Use this build's server zip.",
+      "status": "merged"
+    },
+    {
       "id": "main-f53ccae-2026-11-01",
       "game": "zeigote",
       "repo": "janxzs/Zeigote-Godot",
