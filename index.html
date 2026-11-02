@@ -105,21 +105,21 @@ a{color:#8ab4ff}.nav{display:inline-block;margin:0 0 12px;text-decoration:none}.
    else{ body+=`<p class="hint good">Server running, about ${run.minutes_left} min left (60-min free limit), stops automatically 10 min after everyone leaves.</p>`;
      if(run.wss){const link=hostJoin(run.wss,run.build);
       body+=`<div class="row"><input readonly id="hostlink" value="${esc(link)}" onfocus="this.select()"><button class="play" id="hostplay">Play</button><button id="hostcopy">Copy link</button></div>
-<div class="row"><input readonly id="hostcmd" value="zeigote_client.x86_64 -- --connect ${esc(run.wss)}" onfocus="this.select()"><button id="hostcopycmd">Copy desktop command</button></div>`;}
+<div class="row"><input readonly id="hostcmd" value="zeigote -- --connect ${esc(run.wss)}" title="Desktop build of the same version: pass this after the executable" onfocus="this.select()"><button id="hostcopycmd">Copy desktop command</button></div>`;}
      else body+=`<p class="hint">Enter the passcode to see the join link.</p>`;}
    body+=`<div class="row"><button id="hoststop" ${hostState.busy?'disabled':''}>Stop server</button></div>`;}
   else if(hostState.versions){ body+=`<p class="hint">No server running. ${hostState.versions.length?'Use <b>Start server</b> on a build below that has one.':'No build has a hosted server yet (Jan has to upload one).'}</p>`; }
   else if(!hostState.err) body+=`<p class="hint">Checking…</p>`;
   if(hostState.msg) body+=`<p class="hint ${hostState.cls}">${esc(hostState.msg)}</p>`;
-  el.innerHTML=`<label class="lbl" for="hostpass">Hosted server (free, Edgegap)</label><div class="row"><input id="hostpass" type="password" placeholder="Passcode (from Jan)" value="${esc(saved)}" autocomplete="off" spellcheck="false" style="flex:0 1 240px"></div>`+body;
+  el.innerHTML=`<label class="lbl" for="hostpass">Hosted server (free, Edgegap)</label><form class="row" onsubmit="return false"><input id="hostpass" type="password" placeholder="Passcode (from Jan)" value="${esc(saved)}" autocomplete="off" spellcheck="false" style="flex:0 1 240px"></form>`+body;
   const pi=document.getElementById('hostpass'); if(pi){pi.onchange=()=>{if(pi.value) localStorage.setItem(passKey,pi.value); else localStorage.removeItem(passKey); hostRefresh();};}
   const q=id=>document.getElementById(id);
   if(q('hostplay')) q('hostplay').onclick=()=>location.assign(withSearch(run.build,run.wss));
   if(q('hostcopy')) q('hostcopy').onclick=e=>copyText(q('hostlink').value,e.target);
   if(q('hostcopycmd')) q('hostcopycmd').onclick=e=>copyText(q('hostcmd').value,e.target);
   if(q('hoststop')) q('hoststop').onclick=hostStop;
-  list.querySelectorAll('.hostslot').forEach(sl=>{const id=sl.dataset.id; if(!hostState.versions){sl.innerHTML='';return;}
-   if(!hostState.versions.includes(id)){sl.innerHTML='<div class="hostnote">No hosted server for this build (Jan has to upload it).</div>';return;}
+  list.querySelectorAll('.hostslot').forEach((sl,n)=>{const id=sl.dataset.id; if(!hostState.versions){sl.innerHTML='';return;}
+   if(!hostState.versions.includes(id)){sl.innerHTML=n<4?'<div class="hostnote">No hosted server for this build (Jan has to upload it).</div>':'';return;}
    const other=run&&run.build!==id, mine=run&&run.build===id;
    sl.innerHTML=`<button class="start" ${hostState.busy||mine?'disabled':''} title="${other?'Only one free server at a time. Stop the running one first.':''}">${mine?(run.ready?'Server running':'Starting…'):(other?'Start server (another build is running)':'Start server')}</button>`;
    sl.firstChild.onclick=()=>hostStart(id);});
