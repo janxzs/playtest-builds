@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-2b44739-2026-11-02",
+      "game": "zeigote",
+      "repo": "janxzs/Zeigote-Godot",
+      "pr": null,
+      "sha": "2b44739",
+      "ticket": "ZG-0062",
+      "datetime": "2026-11-02T13:55:41-08:00",
+      "date": "2026-11-02",
+      "engine": "4.7.2",
+      "pck": "builds/zeigote/main-2b44739-2026-11-02/zeigote.pck",
+      "title": "Zeigote: 3D sounds follow their own level (no more full-scale clamp), land quieter, web stacking guard (ZG-0062)",
+      "summary": "Net protocol 15 is unchanged from 3256fcb, but the server also checks the build id, so each build needs its matching server zip (release playtest/main-2b44739-2026-11-02, Windows, includes the friends link script). Solo play needs nothing. What changed (ZG-0062): 3D sounds are now capped at their own level (the old clamp played every nearby 3D sound at full file level, so the 1 dB trim of ZG-0060 changed nothing); up close they are 0-6 dB quieter; land is 0.5 dB quieter; in the browser a stacking guard ducks a sound by 3 or 5 dB when several sounds start within 80 ms and would add up past full scale (a tree chop = hit + swing + pickup used to peak at 1.2). Includes ZG-0060 (new hit_wood / hit_stone), ZG-0058, ZG-0057, ZG-0061 and earlier.",
+      "controls": "Menu: Play Solo, Join Co-op, Host Co-op (desktop). In game: click to lock the mouse, mouse look, WASD move, Space jump (on the rope: let go and jump), keys 1-9 or mouse wheel pick the hotbar item (slot 5 = grapple), C opens crafting, B opens the build menu (build mode: LEFT MOUSE places, R rotates, wheel cycles pieces, RIGHT MOUSE or a number key exits), hold F to deconstruct (50% refund), hold G (0.5 s) to repair a damaged piece, E within 7 m of the Nexus upgrades it (otherwise deposits drops), LEFT MOUSE uses the item (grapple: fire at the crosshair, click again to let go; sword: hold for a 3-hit combo; bow and slingshot: hold to draw, release to fire), hold RIGHT MOUSE TO BLOCK, N calls a raid now (debug), Esc menu (Leave to menu), V top-down view. Server flags (after --): --day-s N / --night-s N, --debug-cycle (24 s + 16 s cycle), --day-length S, --seed N.",
+      "test": "Chop a tree and mine a boulder: is the chop clean (no crackle)? Do nearby sounds (pickup, steps, hits) sit at a sensible level, and are other players' footsteps still easy to hear? Use this build's server zip.",
+      "status": "merged"
+    },
+    {
       "id": "main-3256fcb-2026-11-02",
       "game": "zeigote",
       "repo": "janxzs/Zeigote-Godot",
