@@ -1,6 +1,23 @@
 {
   "builds": [
     {
+      "id": "main-4295322-2026-11-10",
+      "game": "zeigote",
+      "repo": "janxzs/Zeigote-Godot",
+      "pr": null,
+      "sha": "4295322",
+      "ticket": "ZG-0063",
+      "datetime": "2026-11-10T08:30:04-08:00",
+      "date": "2026-11-10",
+      "engine": "4.7.2",
+      "pck": "builds/zeigote/main-4295322-2026-11-10/zeigote.pck",
+      "title": "Zeigote: day and night are 2.5 min each (ZG-0063)",
+      "summary": "Net protocol 15 is unchanged from 2b44739, but the server also checks the build id, so each build needs its matching server zip (release playtest/main-4295322-2026-11-10, Windows, includes the friends link script). Solo play needs nothing. What changed (ZG-0063): day and night are now 150 s each (was 180 s day + 120 s night in ZG-0061); the HUD shows DAY 1  2:30 / NIGHT 1  2:30 at the start of each phase; each night still spawns the same total. No audio changes since 2b44739. Includes ZG-0062, ZG-0060, ZG-0058, ZG-0057, ZG-0061 and earlier.",
+      "controls": "Menu: Play Solo, Join Co-op, Host Co-op (desktop). In game: click to lock the mouse, mouse look, WASD move, Space jump (on the rope: let go and jump), keys 1-9 or mouse wheel pick the hotbar item (slot 5 = grapple), C opens crafting, B opens the build menu (build mode: LEFT MOUSE places, R rotates, wheel cycles pieces, RIGHT MOUSE or a number key exits), hold F to deconstruct (50% refund), hold G (0.5 s) to repair a damaged piece, E within 7 m of the Nexus upgrades it (otherwise deposits drops), LEFT MOUSE uses the item (grapple: fire at the crosshair, click again to let go; sword: hold for a 3-hit combo; bow and slingshot: hold to draw, release to fire), hold RIGHT MOUSE TO BLOCK, N calls a raid now (debug), Esc menu (Leave to menu), V top-down view. Server flags (after --): --day-s N / --night-s N, --debug-cycle (24 s + 16 s cycle), --day-length S, --seed N.",
+      "test": "Watch the HUD: does day start at 2:30 and flip to night at about 2.5 minutes, with night also starting at 2:30? Does night 1 still spawn its wave? Use this build's server zip.",
+      "status": "merged"
+    },
+    {
       "id": "main-2b44739-2026-11-02",
       "game": "zeigote",
       "repo": "janxzs/Zeigote-Godot",
